@@ -1,6 +1,6 @@
 'use client'; // This is a Client Component
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function RicesBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);

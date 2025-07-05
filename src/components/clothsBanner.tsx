@@ -1,6 +1,6 @@
 'use client'; // This is a Client Component
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function ClothsBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export default function ClothsBanner() {
               </h1>
               <p className="banner-subtitle text-xl text-gray-300 mt-4 max-w-2xl">
                 Premium Indian fabrics and traditional garments - from silk sarees to handcrafted cotton, 
-                showcasing India's rich textile heritage.
+                showcasing India&apos;s rich textile heritage.
               </p>
             </div>
           </div>
