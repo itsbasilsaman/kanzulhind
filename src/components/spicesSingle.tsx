@@ -133,7 +133,7 @@ export default function SpicesSingle() {
               </figure>
               <p>We are committed to preserving the traditional methods of spice cultivation and processing, ensuring that every spice in our collection carries the authentic taste and aroma that has made Indian cuisine world-famous.</p>
               <h4>Contact Us</h4>
-              <p>Whether you're a professional chef or a home cook passionate about authentic flavors, our team is here to help you discover the perfect spices that will elevate your dishes to new heights of culinary excellence.</p>
+              <p>Whether you&apos;re a professional chef or a home cook passionate about authentic flavors, our team is here to help you discover the perfect spices that will elevate your dishes to new heights of culinary excellence.</p>
             </div>
             <div className="faq-service-wrap">
               <div className="faq-title-wrap service-post">

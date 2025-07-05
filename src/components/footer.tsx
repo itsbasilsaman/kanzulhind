@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
@@ -38,17 +38,7 @@ export default function Footer() {
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut'
-      }
-    }
-  };
+
 
   return (
     <section className="footer-main-section" ref={ref}>

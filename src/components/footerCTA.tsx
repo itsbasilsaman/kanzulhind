@@ -44,7 +44,7 @@ export default function FooterCTA() {
       setSubmitStatus('success');
       setEmail('');
       formRef.current?.reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

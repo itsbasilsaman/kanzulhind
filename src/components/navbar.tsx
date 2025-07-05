@@ -216,7 +216,7 @@ export default function Navbar() {
                         <div className="text-gray-400 mb-2">
                           <Search className="w-8 h-8 mx-auto" />
                         </div>
-                        <p className="text-sm text-gray-600">No results found for "{searchQuery}"</p>
+                        <p className="text-sm text-gray-600">No results found for &quot;{searchQuery}&quot;</p>
                         <p className="text-xs text-gray-400 mt-1">Try searching for something else</p>
                       </div>
                     )}

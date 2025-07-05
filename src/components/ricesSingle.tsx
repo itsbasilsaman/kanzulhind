@@ -125,7 +125,7 @@ export default function RicesSingle() {
               </figure>
               <p>We are committed to preserving the traditional methods of rice cultivation and processing, ensuring that every grain carries the authentic taste and aroma that has made Indian rice famous across the globe.</p>
               <h4>Contact Us</h4>
-              <p>Whether you're a culinary professional, restaurant owner, or home cook seeking authentic Indian rice varieties, our team is here to help you discover the perfect rice for your culinary needs.</p>
+              <p>Whether you&apos;re a culinary professional, restaurant owner, or home cook seeking authentic Indian rice varieties, our team is here to help you discover the perfect rice for your culinary needs.</p>
             </div>
             <div className="faq-service-wrap">
               <div className="faq-title-wrap service-post">

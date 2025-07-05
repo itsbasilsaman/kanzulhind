@@ -125,7 +125,7 @@ export default function AntiqueSingle() {
               </figure>
               <p>We are committed to preserving the legacy of fine craftsmanship and connecting collectors with pieces that carry historical significance and artistic merit.</p>
               <h4>Contact Us</h4>
-              <p>Whether you're a seasoned collector or new to the world of antiques, our team is here to help you discover exceptional pieces that will become treasured additions to your collection.</p>
+              <p>Whether you&apos;re a seasoned collector or new to the world of antiques, our team is here to help you discover exceptional pieces that will become treasured additions to your collection.</p>
             </div>
             <div className="faq-service-wrap">
               <div className="faq-title-wrap service-post">

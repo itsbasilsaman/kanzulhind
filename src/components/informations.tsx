@@ -26,14 +26,17 @@ export default function Informations() {
       { threshold: 0.1 }
     );
 
-    if (titleRef.current) observer.observe(titleRef.current);
-    cardRefs.current.forEach((card) => {
+    const currentTitleRef = titleRef.current;
+    const currentCardRefs = cardRefs.current;
+
+    if (currentTitleRef) observer.observe(currentTitleRef);
+    currentCardRefs.forEach((card) => {
       if (card) observer.observe(card);
     });
 
     return () => {
-      if (titleRef.current) observer.unobserve(titleRef.current);
-      cardRefs.current.forEach((card) => {
+      if (currentTitleRef) observer.unobserve(currentTitleRef);
+      currentCardRefs.forEach((card) => {
         if (card) observer.unobserve(card);
       });
     };

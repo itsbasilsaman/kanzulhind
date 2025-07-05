@@ -108,7 +108,7 @@ export default function ClothsSingle() {
           >
             <div className="service-summary w-richtext">
               <h4>Premium Indian Textiles</h4>
-              <p>Authentic Indian fabrics and traditional garments - from silk sarees to handcrafted cotton, showcasing India's rich textile heritage.</p>
+              <p>Authentic Indian fabrics and traditional garments - from silk sarees to handcrafted cotton, showcasing India&apos;s rich textile heritage.</p>
               <p>With centuries of expertise in textile craftsmanship, our carefully curated collection brings the true essence of Indian textile traditions to your wardrobe, ensuring every piece tells a story of cultural heritage and artistic excellence.</p>
               <h4>Why Choose Our Textiles?</h4>
               <p>Our textiles represent the finest quality available, sourced directly from the most renowned weaving clusters and artisan communities across India.</p>
@@ -133,7 +133,7 @@ export default function ClothsSingle() {
               </figure>
               <p>We are committed to preserving the traditional methods of textile weaving and craftsmanship, ensuring that every piece in our collection carries the authentic beauty and cultural significance that has made Indian textiles world-famous.</p>
               <h4>Contact Us</h4>
-              <p>Whether you're looking for a special occasion saree, traditional ethnic wear, or handcrafted cotton garments, our team is here to help you discover the perfect textiles that will connect you to India's rich cultural heritage.</p>
+              <p>Whether you&apos;re looking for a special occasion saree, traditional ethnic wear, or handcrafted cotton garments, our team is here to help you discover the perfect textiles that will connect you to India&apos;s rich cultural heritage.</p>
             </div>
             <div className="faq-service-wrap">
               <div className="faq-title-wrap service-post">

@@ -1,22 +1,10 @@
 'use client'; // This is a Client Component
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 export default function AntiqueBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  // Parallax effect on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Animation on mouse move
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
