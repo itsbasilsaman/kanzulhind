@@ -264,10 +264,11 @@ export default function Navbar() {
         </div>
       </header>
    
-   <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 sm:hidden z-40">
+   <div className="fixed bottom-1 left-0 mx-2 right-0 bg-white border-t border-gray-200 px-4 py-2 sm:hidden z-40 rounded-full">
     <div className="flex items-center justify-around">
       {/* Home */}
-      <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
+     <Link href={'/'}>
+     <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
           <svg className="w-6 h-6 text-[#41574B]" fill="currentColor" viewBox="0 0 24 24">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
@@ -275,9 +276,28 @@ export default function Navbar() {
         </div>
         <span className="text-xs font-medium text-[#41574B]">Home</span>
       </button>
+     </Link>
 
-      {/* Shop */}
+    
+
+ 
+      
+      <Link href={'/blog'}>
       <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
+        <div className="relative">
+        <FaMicroblog className="w-6 h-6 text-gray-500 group-hover:text-[#242e29] transition-colors duration-200" />
+          <span className="absolute -top-2 -right-2 bg-[#41574B] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
+            3
+          </span>
+        </div>
+        <span className="text-xs font-medium text-gray-500 group-hover:text-[#27322c] transition-colors duration-200">
+          Blog
+        </span>
+      </button>
+      </Link>
+
+        {/* Shop */}
+        <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
           <svg
             className="w-6 h-6 text-gray-500 group-hover:text-[#223028] transition-colors duration-200"
@@ -297,22 +317,6 @@ export default function Navbar() {
           Shop
         </span>
       </button>
-
-      {/* Cart */}
-      
-      <Link href={'/blog'}>
-      <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
-        <div className="relative">
-        <FaMicroblog className="w-6 h-6 text-gray-500 group-hover:text-[#242e29] transition-colors duration-200" />
-          <span className="absolute -top-2 -right-2 bg-[#41574B] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
-            3
-          </span>
-        </div>
-        <span className="text-xs font-medium text-gray-500 group-hover:text-[#27322c] transition-colors duration-200">
-          Blog
-        </span>
-      </button>
-      </Link>
 
       {/* Chat */}
       <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
