@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const ProductSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -37,112 +36,6 @@ const ProductSection = () => {
       }
     };
   }, []);
-
-  // Product data
-  const seeds = [
-    {
-      id: 1,
-      name: 'Walnuts',
-      price: '$28.99 USD',
-      quantity: '100g',
-      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80',
-      href: '/product/walnuts',
-    },
-    {
-      id: 2,
-      name: 'Hazelnut',
-      price: '$29.99 USD',
-      quantity: '250g',
-      image: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80',
-      href: '/product/hazelnut',
-    },
-    {
-      id: 3,
-      name: 'Peapod',
-      price: '$24.99 USD',
-      quantity: '500g',
-      image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
-      href: '/product/peapod',
-    },
-    {
-      id: 4,
-      name: 'Burnt leaves',
-      price: '$24.99 USD',
-      quantity: '25g',
-      image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80',
-      href: '/product/burnt-leaves',
-    },
-  ];
-
-  const plants = [
-    {
-      id: 5,
-      name: 'Broccoli',
-      price: '$45.99 USD',
-      quantity: '350g',
-      image: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80',
-      href: '/product/broccoli',
-    },
-    {
-      id: 6,
-      name: 'Tomato',
-      price: '$22.99 USD',
-      quantity: '2kg',
-      image: 'https://images.unsplash.com/photo-1504674900247-ec6b0b1b798e?auto=format&fit=crop&w=400&q=80',
-      href: '/product/tomato',
-    },
-    {
-      id: 7,
-      name: 'Linen Burlap Bag',
-      price: '$3.99 USD',
-      quantity: '50g',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-      href: '/product/linen-burlap-bag',
-    },
-    {
-      id: 8,
-      name: 'Corn',
-      price: '$85.43 USD',
-      quantity: '500g',
-      image: 'https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=400&q=80',
-      href: '/product/corn',
-    },
-  ];
-
-  const vegetables = [
-    {
-      id: 9,
-      name: 'Corn',
-      price: '$85.43 USD',
-      quantity: '500g',
-      image: 'https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=400&q=80',
-      href: '/product/corn',
-    },
-    {
-      id: 10,
-      name: 'Onion',
-      price: '$12.99 USD',
-      quantity: '1kg',
-      image: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3fdc?auto=format&fit=crop&w=400&q=80',
-      href: '/product/onion',
-    },
-    {
-      id: 11,
-      name: 'Pistachio',
-      price: '$22.99 USD',
-      quantity: '200g',
-      image: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80',
-      href: '/product/pistachio',
-    },
-    {
-      id: 12,
-      name: 'Reusable Cups',
-      price: '$2.99 USD',
-      quantity: '25g',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-      href: '/product/reusable-cups',
-    },
-  ];
 
   return (
     <section ref={sectionRef} className="our-products-section">
