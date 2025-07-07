@@ -9244,6 +9244,71 @@ p {
   }
 }
 
+/* Fade animation for right section */
+.fade-anim {
+  transition: opacity 0.4s;
+}
+.fade-in {
+  opacity: 1;
+}
+.fade-out {
+  opacity: 0;
+}
+
+/* Highlight active service in left list */
+.active-service .service-list-link {
+  color: #16a34a; /* Tailwind green-600 */
+  font-weight: 600;
+}
+
+/* Responsive product grid for product section */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+  .product-list-wrap .relative.w-full.h-64 {
+    height: 7.5rem !important;
+    min-height: 7.5rem !important;
+    max-height: 7.5rem !important;
+  }
+  .product-name-link {
+    font-size: 0.95rem !important;
+    line-height: 1.1rem !important;
+  }
+  .product-price-text {
+    font-size: 0.85rem !important;
+    line-height: 1rem !important;
+  }
+  .products-category-title {
+    font-size: 1.1rem !important;
+  }
+  .section-title {
+    font-size: 1.3rem !important;
+  }
+  /* WhatsApp Connect us button responsive styles */
+  .product-list-wrap .group-hover\:opacity-100 span {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 1rem !important;
+    min-width: 120px;
+    justify-content: center;
+  }
+  .product-list-wrap .group-hover\:opacity-100 svg {
+    font-size: 1.1rem !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 40px;
@@ -10555,6 +10620,54 @@ p {
 
   .splash-marketing-image-wrap {
     justify-content: flex-end;
+  }
+}
+
+/* Responsive product grid for product section */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+  .product-list-wrap .relative.w-full.h-64 {
+    height: 7.5rem !important; /* Reduce image height on mobile */
+    min-height: 7.5rem !important;
+    max-height: 7.5rem !important;
+  }
+  .product-name-link {
+    font-size: 0.95rem !important;
+    line-height: 1.1rem !important;
+  }
+  .product-price-text {
+    font-size: 0.85rem !important;
+    line-height: 1rem !important;
+  }
+  .products-category-title {
+    font-size: 1.1rem !important;
+  }
+  .section-title {
+    font-size: 1.3rem !important;
+  }
+  /* WhatsApp Connect us button responsive styles */
+  .product-list-wrap .group-hover\:opacity-100 span {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 1rem !important;
+    min-width: 120px;
+    justify-content: center;
+  }
+  .product-list-wrap .group-hover\:opacity-100 svg {
+    font-size: 1.1rem !important;
   }
 }
 
@@ -12041,6 +12154,522 @@ p {
   }
 }
 
+/* Fade animation for right section */
+.fade-anim {
+  transition: opacity 0.4s;
+}
+.fade-in {
+  opacity: 1;
+}
+.fade-out {
+  opacity: 0;
+}
+
+/* Highlight active service in left list */
+.active-service .service-list-link {
+  color: #16a34a; /* Tailwind green-600 */
+  font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .service-single-wrap {
+    flex-direction: column;
+  }
+
+  .service-left-sticky {
+    position: static;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .service-right-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .blog-main-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .contact-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .contact-form-title-wrap {
+    margin-bottom: 20px;
+  }
+
+  .faq-section, .licenses-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .licenses-title {
+    font-size: 26px;
+  }
+
+  .licenses-whole-content-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .licenses-text-title, .licenses-text {
+    font-size: 20px;
+  }
+
+  .change-log-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .changelog-whole-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 60px 30px;
+  }
+
+  .changelog-title {
+    font-size: 36px;
+  }
+
+  .changelog-content {
+    font-size: 18px;
+  }
+
+  .password-title {
+    font-size: 32px;
+  }
+
+  .password-content {
+    font-size: 20px;
+  }
+
+  .password-text-field {
+    margin-top: 20px;
+  }
+
+  .error-whole-wrap {
+    font-size: 20px;
+  }
+
+  .error-title {
+    font-size: 80px;
+  }
+
+  .error-subtitle {
+    font-size: 36px;
+  }
+
+  .service-single-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .service-list-card-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .service-list-card-title {
+    font-size: 18px;
+  }
+
+  .service-suggest-section {
+    padding-bottom: 80px;
+  }
+
+  .service-suggest-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .service-suggest-title-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .service-suggest-title {
+    font-size: 24px;
+  }
+
+  .service-cta-card {
+    padding: 40px 20px;
+  }
+
+  .service-cta-title {
+    font-size: 22px;
+  }
+
+  .service-cta-link-wrap {
+    margin-top: 20px;
+  }
+
+  .team-single-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .team-single-whole-wrap {
+    max-width: 100%;
+  }
+
+  .team-single-image-wrap {
+    border-radius: 20px;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .team-single-content-wrap {
+    border-radius: 20px;
+  }
+
+  .team-single-name {
+    font-size: 24px;
+  }
+
+  .team-single-designation {
+    font-size: 18px;
+  }
+
+  .team-card-whole-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .team-profile-details-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .team-details-card-title {
+    font-size: 22px;
+  }
+
+  .blog-banner-wrap {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .blog-banner-title-wrap {
+    margin-top: 20px;
+  }
+
+  .blog-single-author-name {
+    font-size: 14px;
+  }
+
+  .blog-banner-title {
+    font-size: 28px;
+  }
+
+  .blog-single-post-author-wrap {
+    margin-bottom: 10px;
+  }
+
+  .blog-single-section {
+    padding-top: 80px;
+  }
+
+  .blog-summary-whole-wrap {
+    padding-bottom: 80px;
+  }
+
+  .blog-single-about-wrap {
+    margin-bottom: 15px;
+  }
+
+  .blog-single-about-title {
+    font-size: 24px;
+  }
+
+  .blog-category-list-wrap {
+    margin-bottom: 15px;
+  }
+
+  .blog-list-category-title {
+    font-size: 22px;
+  }
+
+  .blog-single-tag-wrap {
+    margin-bottom: 15px;
+  }
+
+  .blog-tag-link {
+    font-size: 14px;
+  }
+
+  .blog-single-author-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .blog-author-content-wrap {
+    max-width: none;
+  }
+
+  .blog-summary-author-name {
+    font-size: 18px;
+  }
+
+  .blog-single-author-intro {
+    font-size: 14px;
+  }
+
+  .blog-suggest-section {
+    padding-bottom: 40px;
+  }
+
+  .blog-author-social-wrap {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-top: 15px;
+  }
+
+  .blog-suggest-collection {
+    max-width: 100%;
+    padding-top: 30px;
+  }
+
+  .menu-button {
+    padding: 10px;
+  }
+
+  .hero-bg-image-wrap, .hero-bg-overlay-wrap {
+    min-height: 400px;
+  }
+
+  .service-collection-whole-wrap {
+    margin-top: 20px;
+  }
+
+  .why-us-wrap {
+    margin-bottom: 80px;
+  }
+
+  .why-us-count-wrap {
+    padding: 30px 30px 15px;
+  }
+
+  .why-us-count-list-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .why-us-count-number-text {
+    font-size: 40px;
+  }
+
+  .why-select-us-wrap {
+    padding-bottom: 80px;
+  }
+
+  .why-select-us-content-list-wrap {
+    padding: 20px;
+  }
+
+  .why-select-us-title {
+    font-size: 20px;
+  }
+
+  .why-select-us-whole-list-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin-top: 15px;
+  }
+
+  .why-select-us-icon-wrap {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+  }
+
+  .why-select-us-item-title {
+    font-size: 16px;
+  }
+
+  .why-select-us-content {
+    font-size: 14px;
+  }
+
+  .why-us-bg-image-wrap {
+    max-width: 100%;
+  }
+
+  .team-whole-collection-wrap {
+    max-width: 100%;
+  }
+
+  .about-video-text {
+    font-size: 18px;
+  }
+
+  .quality-icon-wrap {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .service-cta-icon-bg {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+  }
+
+  .faq-service-wrap {
+    margin-top: 15px;
+  }
+
+  .team-main-post-main-wrap {
+    max-width: 100%;
+  }
+
+  .blog-single-social-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .blog-social-link {
+    max-width: 25px;
+  }
+
+  .shop-single-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .product-price-single-subtext {
+    font-size: 20px;
+  }
+
+  .price-single-describe-content {
+    margin-bottom: 15px;
+  }
+
+  .shop-content-bottom-wrap {
+    margin-top: 20px;
+  }
+
+  .shop-summary-main-wrap {
+    margin-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .shop-summary-tab {
+    align-items: flex-start;
+  }
+
+  .shop-tab-menus {
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shop-tab-link {
+    width: 50%;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .shop-suggest-section {
+    padding-bottom: 80px;
+  }
+
+  .shop-single-image-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    max-width: 100%;
+  }
+
+  .shop-view-images-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .shop-single-small-image {
+    width: 120px;
+    height: 120px;
+    padding: 8px 10px;
+  }
+
+  .shop-banner-image-wrap {
+    max-height: 400px;
+  }
+
+  .product-listing {
+    max-width: 100%;
+  }
+
+  .get-a-quote-button-wrap, .hireus-orange-button {
+    font-size: 10px;
+  }
+
+  .hireus-content {
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+
+  .hireus-badge-wrap {
+    padding: 8px 10px;
+  }
+
+  .splash-animation-wrap {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .splash-counter-section {
+    padding-top: 80px;
+  }
+
+  .splash-main-page-wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .splash-cta-section {
+    padding-top: 80px;
+  }
+
+  .splash-feature-card {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    min-width: 200px;
+    font-size: 18px;
+  }
+
+  .splash-section-title {
+    font-size: 30px;
+  }
+
+  .splash-asset-section {
+    padding-top: 80px;
+  }
+
+  .splash-feature-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .splash-cta-title {
+    font-size: 22px;
+  }
+}
+
 @media screen and (max-width: 479px) {
   body {
     font-size: 16px;
@@ -13284,6 +13913,12 @@ p {
     margin-bottom: 10px;
   }
 
+  .product-single-price-wrap {
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    flex-flow: wrap;
+  }
+
   .product-price-single-subtext {
     font-size: 22px;
   }
@@ -13358,12 +13993,6 @@ p {
 
   .product-listing {
     max-width: 100%;
-  }
-
-  .product-single-price-wrap {
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-    flex-flow: wrap;
   }
 
   .default-state {
