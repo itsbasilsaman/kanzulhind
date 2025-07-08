@@ -2,14 +2,16 @@
 
 import type React from "react"
 import Image from "next/image";
-import { ShoppingCart, Heart, Search, MessageCircle, Clock, TrendingUp, X } from "lucide-react"
+import { ShoppingCart, Heart, Search, MessageCircle, Clock, TrendingUp, X, RefreshCcw } from "lucide-react"
 import { FaMicroblog } from "react-icons/fa6";
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Input } from "./ui/input"
 import { usePathname } from "next/navigation"
 import { Montserrat } from "next/font/google";
-
+import { FaWhatsapp } from "react-icons/fa";
+import { AiFillProduct } from "react-icons/ai";
+import { IoIosContacts } from "react-icons/io";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,6 +25,13 @@ export default function Navbar() {
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const pathname = usePathname();
+  // Add language state
+  const [lang, setLang] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('lang') || 'EN';
+    }
+    return 'EN';
+  });
 
   // Dummy data for search suggestions
   const recentSearches = ["Honey Products", "Organic Honey", "Raw Honey"]
@@ -43,9 +52,7 @@ export default function Navbar() {
 
   const navigationLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Pages", href: "/pages" },
-    { name: "Blog", href: "/blog" },
+    { name: "Products", href: "/products" },
     { name: "Contact Us", href: "/contact" },
   ]
 
@@ -126,103 +133,7 @@ export default function Navbar() {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              {/* Search Icon with Dropdown */}
-              <div className="relative" ref={searchRef}>
-                <button
-                  onClick={handleSearchClick}
-                  className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 group ${
-                    isSearchOpen ? "bg-yellow-100 text-yellow-600" : "hover:bg-gray-100"
-                  }`}
-                >
-                  <Search
-                    className={`w-5 h-5 transition-colors duration-200 ${
-                      isSearchOpen ? "text-yellow-600" : "text-gray-700 group-hover:text-yellow-600"
-                    }`}
-                  />
-                </button>
-
-                {/* Search Dropdown */}
-                {isSearchOpen && (
-                  <div className="absolute top-12 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-4 animate-in slide-in-from-top-2 duration-200">
-                    {/* Search Input */}
-                    <form onSubmit={handleSearchSubmit} className="px-4 mb-4">
-                      <div className="relative">
-                        <Input
-                          ref={inputRef}
-                          type="text"
-                          placeholder="Search products, categories..."
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
-                        />
-                        {searchQuery && (
-                          <button
-                            type="button"
-                            onClick={() => setSearchQuery("")}
-                            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                          >
-                            <X className="w-4 h-4" />
-                          </button>
-                        )}
-                      </div>
-                    </form>
-
-                    {/* Recent Searches */}
-                    {!searchQuery && recentSearches.length > 0 && (
-                      <div className="px-4 mb-4">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <Clock className="w-4 h-4 text-gray-400" />
-                          <span className="text-sm font-medium text-gray-600">Recent Searches</span>
-                        </div>
-                        <div className="space-y-1">
-                          {recentSearches.map((search, index) => (
-                            <button
-                              key={index}
-                              onClick={() => handleSuggestionClick(search)}
-                              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-150"
-                            >
-                              {search}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Popular Suggestions */}
-                    <div className="px-4">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <TrendingUp className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm font-medium text-gray-600">
-                          {searchQuery ? "Suggestions" : "Popular Searches"}
-                        </span>
-                      </div>
-                      <div className="space-y-1 max-h-48 overflow-y-auto">
-                        {(searchQuery ? filteredSuggestions : popularSuggestions).map((suggestion, index) => (
-                          <button
-                            key={index}
-                            onClick={() => handleSuggestionClick(suggestion)}
-                            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-150 flex items-center justify-between group"
-                          >
-                            <span>{suggestion}</span>
-                            <Search className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* No Results */}
-                    {searchQuery && filteredSuggestions.length === 0 && (
-                      <div className="px-4 py-8 text-center">
-                        <div className="text-gray-400 mb-2">
-                          <Search className="w-8 h-8 mx-auto" />
-                        </div>
-                        <p className="text-sm text-gray-600">No results found for &quot;{searchQuery}&quot;</p>
-                        <p className="text-xs text-gray-400 mt-1">Try searching for something else</p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+             
 
               {/* Like/Heart Icon */}
               <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
@@ -231,14 +142,41 @@ export default function Navbar() {
 
               {/* WhatsApp Icon - Hidden on mobile */}
               <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
-                <MessageCircle className="w-5 h-5 text-gray-700 group-hover:text-green-600 transition-colors duration-200" />
-              </button>
+              <FaWhatsapp  className="w-5 h-5 text-green-600 group-hover:text-green-600 transition-colors duration-200" />              </button>
 
-              {/* Shopping Cart - Hidden on mobile since it's in bottom nav */}
-              <button className="relative items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
-                <ShoppingCart className="w-5 h-5 text-gray-700 group-hover:text-yellow-600 transition-colors duration-200" />
-                <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium transform group-hover:scale-110 transition-transform duration-200">
-                  0
+              {/* Language Switcher Toggle - Compact, Themed */}
+              <button
+                onClick={() => {
+                  const newLang = lang === 'EN' ? 'AR' : 'EN';
+                  setLang(newLang);
+                  if (typeof window !== 'undefined') localStorage.setItem('lang', newLang);
+                }}
+                aria-label="Switch language"
+                className="flex items-center gap-1 pl-8 px-1 py-0.5 rounded-xl border-2 border-[#41574B] bg-white   transition-all duration-200   focus:outline-none"
+                style={{ minWidth: 64 }}
+              >
+                {/* English Block */}
+                <span
+                  className={`flex items-center justify-center w-8 h-8 rounded-lg text-base font-semibold border-2 transition-all duration-200 ${
+                    lang === 'EN'
+                      ? 'bg-[#D6E6BA] border-[#41574B] text-[#41574B] scale-105 shadow'
+                      : 'bg-white border-[#D6E6BA] text-[#41574B]'
+                  }`}
+                >
+                  EN
+                </span>
+                {/* Swap Icon */}
+                <RefreshCcw className="w-4 h-4 text-[#41574B] mx-0.5" />
+                {/* Arabic Block */}
+                <span
+                  className={`flex items-center justify-center w-8 h-8 rounded-lg text-base font-semibold border-2 transition-all duration-200 ${
+                    lang === 'AR'
+                      ? 'bg-[#D6E6BA] border-[#41574B] text-[#41574B] scale-105 shadow'
+                      : 'bg-white border-[#D6E6BA] text-[#41574B]'
+                  }`}
+                  style={{ fontFamily: 'Tahoma, Arial, sans-serif' }}
+                >
+                  عـر
                 </span>
               </button>
             </div>
@@ -252,12 +190,40 @@ export default function Navbar() {
             </Link>
             {/* Cart and Chat on the right */}
             <div className="flex items-center space-x-4">
-              <button className="relative flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 transition-all duration-200">
-                <ShoppingCart className="w-5 h-5 text-gray-700" />
-                <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">0</span>
-              </button>
-              <button className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 transition-all duration-200">
-                <MessageCircle className="w-5 h-5 text-gray-700" />
+               {/* Language Switcher Toggle - Compact, Themed */}
+              <button
+                onClick={() => {
+                  const newLang = lang === 'EN' ? 'AR' : 'EN';
+                  setLang(newLang);
+                  if (typeof window !== 'undefined') localStorage.setItem('lang', newLang);
+                }}
+                aria-label="Switch language"
+                className="flex items-center gap-1 pl-8 px-1 py-0.5 rounded-xl border-2 border-[#41574B] bg-white   transition-all duration-200   focus:outline-none"
+                style={{ minWidth: 64 }}
+              >
+                {/* English Block */}
+                <span
+                  className={`flex items-center justify-center w-8 h-8 rounded-lg text-base font-semibold border-2 transition-all duration-200 ${
+                    lang === 'EN'
+                      ? 'bg-[#D6E6BA] border-[#41574B] text-[#41574B] scale-105 shadow'
+                      : 'bg-white border-[#D6E6BA] text-[#41574B]'
+                  }`}
+                >
+                  EN
+                </span>
+                {/* Swap Icon */}
+                <RefreshCcw className="w-4 h-4 text-[#41574B] mx-0.5" />
+                {/* Arabic Block */}
+                <span
+                  className={`flex items-center justify-center w-8 h-8 rounded-lg text-base font-semibold border-2 transition-all duration-200 ${
+                    lang === 'AR'
+                      ? 'bg-[#D6E6BA] border-[#41574B] text-[#41574B] scale-105 shadow'
+                      : 'bg-white border-[#D6E6BA] text-[#41574B]'
+                  }`}
+                  style={{ fontFamily: 'Tahoma, Arial, sans-serif' }}
+                >
+                  عـر
+                </span>
               </button>
             </div>
           </div>
@@ -282,51 +248,43 @@ export default function Navbar() {
 
  
       
-      <Link href={'/blog'}>
+      <Link href={'/products'}>
       <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-        <FaMicroblog className="w-6 h-6 text-gray-500 group-hover:text-[#242e29] transition-colors duration-200" />
+        <AiFillProduct className="w-6 h-6 text-gray-500 group-hover:text-[#242e29] transition-colors duration-200" />
           <span className="absolute -top-2 -right-2 bg-[#41574B] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
-            3
+            4
           </span>
         </div>
         <span className="text-xs font-medium text-gray-500 group-hover:text-[#27322c] transition-colors duration-200">
-          Blog
+          Products
         </span>
       </button>
       </Link>
 
-        {/* Shop */}
-        <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
+       
+        <Link href={'/contact'}>
+          <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-          <svg
-            className="w-6 h-6 text-gray-500 group-hover:text-[#223028] transition-colors duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-            />
-          </svg>
+          <IoIosContacts className="w-6 h-6 text-gray-500 group-hover:text-green-500 transition-colors duration-200"/>
         </div>
         <span className="text-xs font-medium text-gray-500 group-hover:text-[#1b211e] transition-colors duration-200">
-          Shop
+          Contact
         </span>
-      </button>
+        </button>
+        </Link>
 
       {/* Chat */}
-      <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
+      <Link href={'https://wa.me/966571961404?text=Sir%2C%20I%20want%20to%20discuss%20about%20your%20products.'} target="_blank" rel="noopener noreferrer">
+        <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-          <MessageCircle className="w-6 h-6 text-gray-500 group-hover:text-green-500 transition-colors duration-200" />
+          <FaWhatsapp className="w-6 h-6 text-gray-500 group-hover:text-green-500 transition-colors duration-200" />
         </div>
         <span className="text-xs font-medium text-gray-500 group-hover:text-green-500 transition-colors duration-200">
           Chat
         </span>
       </button>
+      </Link>
     </div>
   </div>
     </>
