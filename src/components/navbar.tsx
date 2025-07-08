@@ -19,7 +19,6 @@ const montserrat = Montserrat({
 
 export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const pathname = usePathname();

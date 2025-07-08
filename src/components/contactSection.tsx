@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion, easeOut } from 'framer-motion';
 
 export default function ContactSection() {
