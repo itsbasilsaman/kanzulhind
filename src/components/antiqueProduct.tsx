@@ -13,11 +13,6 @@ export interface Product {
   era?: string;
 }
 
-interface ProductSectionProps {
-  products: Product[];
-  category: string;
-}
-
 const furniture: Product[] = [
   {
     id: 1,
@@ -173,7 +168,7 @@ const AntiqueProductSection = () => {
           >
             <h2 className="section-title text-center">Our products</h2>
           </div>
-          {categories.map((cat, idx) => (
+          {categories.map((cat) => (
             <div className="our-products-list-wrap" key={cat.title}>
               <div 
                 data-animate

@@ -13,11 +13,6 @@ export interface Product {
   era?: string;
 }
 
-interface ProductSectionProps {
-  products: Product[];
-  category: string;
-}
-
 const cloths: Product[] = [
     {
       id: 1,
@@ -98,7 +93,7 @@ const ClothsProductSection = () => {
           >
             <h2 className="section-title text-center">Our products</h2>
           </div>
-          {categories.map((cat, idx) => (
+          {categories.map((cat) => (
             <div className="our-products-list-wrap" key={cat.title}>
               <div 
                 data-animate
