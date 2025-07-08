@@ -34,7 +34,7 @@ export default function ContactSection() {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 3000);
-    } catch (error) {
+    } catch {
       setIsError(true);
       setTimeout(() => {
         setIsError(false);
