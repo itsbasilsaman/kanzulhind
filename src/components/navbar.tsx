@@ -2,12 +2,10 @@
 
 import type React from "react"
 import Image from "next/image";
-import { ShoppingCart, Heart, Search, MessageCircle, Clock, TrendingUp, X, RefreshCcw } from "lucide-react"
-import { FaMicroblog } from "react-icons/fa6";
-import Link from "next/link"
-import { useState, useRef, useEffect } from "react"
-import { Input } from "./ui/input"
-import { usePathname } from "next/navigation"
+import { Heart, RefreshCcw } from "lucide-react";
+import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Montserrat } from "next/font/google";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
@@ -33,23 +31,6 @@ export default function Navbar() {
     return 'EN';
   });
 
-  // Dummy data for search suggestions
-  const recentSearches = ["Honey Products", "Organic Honey", "Raw Honey"]
-  const popularSuggestions = [
-    "Premium Honey Collection",
-    "Manuka Honey",
-    "Wildflower Honey",
-    "Honey Gift Sets",
-    "Bee Pollen",
-    "Royal Jelly",
-    "Honeycomb",
-    "Acacia Honey",
-  ]
-
-  const filteredSuggestions = popularSuggestions.filter((suggestion) =>
-    suggestion.toLowerCase().includes(searchQuery.toLowerCase()),
-  )
-
   const navigationLinks = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
@@ -74,26 +55,6 @@ export default function Navbar() {
       inputRef.current.focus()
     }
   }, [isSearchOpen])
-
-  const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen)
-  }
-
-  const handleSuggestionClick = (suggestion: string) => {
-    setSearchQuery(suggestion)
-    setIsSearchOpen(false)
-    // Here you would typically handle the search action
-    console.log("Searching for:", suggestion)
-  }
-
-  const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      setIsSearchOpen(false)
-      // Handle search submission
-      console.log("Searching for:", searchQuery)
-    }
-  }
 
   return (
     <>
