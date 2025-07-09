@@ -2,7 +2,7 @@
 
 import type React from "react"
 import Image from "next/image";
-import { Heart, RefreshCcw } from "lucide-react";
+import { RefreshCcw } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
