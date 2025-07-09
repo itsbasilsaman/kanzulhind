@@ -8,6 +8,7 @@ import Informations from "../components/informations";
 import StatsComponent from "@/components/statsSection";
 import MiddleBanner from "@/components/middleBanner";
 import MainBanner from "@/components/mainBanner";
+import DetailSection from "@/components/detailsSection";
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
       <ServiceSection/>
       <StatsComponent/>
       <Informations/>
+      <DetailSection/>
       <MiddleBanner/>
-      <TestimonialSection/>
       <FAQSection/>
+      <TestimonialSection/>
+      
       <FooterCTA/>
       
      </>

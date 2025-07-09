@@ -32,9 +32,9 @@ export default function MiddleBanner() {
   }, [])
 
   return (
-    <div ref={sectionRef} className=" pt-12 flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
+    <div ref={sectionRef} className="   flex items-center justify-center bg-white px-4 sm:px-6 lg:px-16">
       <section
-        className={`relative w-full max-w-7xl h-[400px] overflow-hidden rounded-2xl transition-all duration-1000 ease-out ${
+        className={`relative w-full max-w-[1200px] h-[400px] overflow-hidden rounded-2xl transition-all duration-1000 ease-out ${
           isVisible ? "opacity-100 transform translate-y-0 scale-100" : "opacity-0 transform translate-y-8 scale-95"
         }`}
         style={{ backgroundColor: "#5E806F" }}
@@ -99,7 +99,7 @@ export default function MiddleBanner() {
                 style={{
                   fontWeight: 600,
                   fontSize: "clamp(14px, 2vw, 16px)",
-                  padding: "10px 24px",
+                  padding: "15px 24px",
                   borderRadius: "9999px",
                   minWidth: "160px",
                   color: "#333333",
@@ -114,7 +114,7 @@ export default function MiddleBanner() {
                 style={{
                   fontWeight: 500,
                   fontSize: "clamp(14px, 2vw, 16px)",
-                  padding: "10px 24px",
+                  padding: "15px 24px",
                   borderRadius: "9999px",
                   borderWidth: "1px",
                   minWidth: "180px",

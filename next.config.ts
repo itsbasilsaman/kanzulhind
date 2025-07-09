@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
       'www.furnituredepot.com',
       'images.unsplash.com',
       'cdn-icons-png.flaticon.com',
+      'cdn.pixabay.com',
+      'purepng.com',
       'c8.alamy.com',
       'followtheyellowbrickhome.com',
       'lionandunicorn.com',

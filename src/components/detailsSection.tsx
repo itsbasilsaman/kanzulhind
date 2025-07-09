@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const ProductSection = () => {
+const DetailSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const ProductSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="our-products-section">
+    <section ref={sectionRef} className="our-products-section mt-8 lg:mt-28">
       <div className="w-layout-blockcontainer container w-container">
         <div className="why-us-wrap">
           <div 
@@ -139,4 +139,4 @@ const ProductSection = () => {
   );
 };
 
-export default ProductSection;
+export default  DetailSection;

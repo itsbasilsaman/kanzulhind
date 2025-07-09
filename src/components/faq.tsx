@@ -35,59 +35,57 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="faq-section">
-      <div className="w-layout-blockcontainer container w-container">
-        <div className="faq-wrap">
+    <section className="pt-10 md:pt-[60px] bg-white faq-section">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="max-w-full md:max-w-4xl lg:max-w-6xl xl:max-w-8xl mx-auto">
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            data-w-id="d20dd745-8054-1429-1e3a-247209336e41" 
-            className="faq-title-wrap"
+            className="mb-6 md:mb-10 text-center"
           >
-            <h2 className="section-title font-medium">Frequently Asked Questions</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium section-title max-w-[90vw] md:max-w-[485px] mx-auto">Frequently Asked Questions</h2>
           </motion.div>
-          
-          <div data-w-id="d20dd745-8054-1429-1e3a-247209336e44" className="faq-whole-wrap">
+          <div className="bg-[#eaf4ee] rounded-2xl mt-6 md:mt-10 p-4 sm:p-6 md:p-[40px_60px_60px] shadow-sm">
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                data-w-id={`d20dd745-8054-1429-1e3a-247209336e${45 + (index * 11)}`}
-                className="faq w-dropdown"
+                className="border-b border-[#c8d6ce] w-full last:border-b-0 py-1 sm:py-2"
               >
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="faq-toggle w-dropdown-toggle"
+                  className="flex justify-between items-center py-3 sm:py-[15px] cursor-pointer select-none gap-x-4 sm:gap-x-8"
                   onClick={() => toggleFAQ(index)}
-                  style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}
                 >
-                  <div>{faq.question}</div>
+                  <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-800 text-left flex-1 whitespace-pre-wrap">
+                    {faq.question}
+                  </div>
                   <motion.div
-                    className="faq-icon-wrap"
                     animate={{ rotate: activeIndex === index ? 45 : 0 }}
                     transition={{ duration: 0.2 }}
-                    style={{ marginLeft: '1rem', display: 'flex', alignItems: 'center' }}
+                    className="ml-2 sm:ml-4 flex items-center justify-center min-w-[24px] sm:min-w-[28px] h-[24px] sm:h-[28px]"
                   >
-                    <FaPlus size={20} />
+                    <span className="block text-[18px] sm:text-[20px] text-green-700">
+                      <FaPlus />
+                    </span>
                   </motion.div>
                 </motion.div>
-                
                 <AnimatePresence>
                   {activeIndex === index && (
                     <motion.nav 
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="faq-answer-list w-dropdown-list"
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden relative z-0"
                     >
-                      <div className="faq-answer-list-wrap">
+                      <div className="max-w-full md:max-w-2xl lg:max-w-4xl pb-3 md:pb-[15px] pr-2 md:pr-[30px]">
                         <motion.p 
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.15 }}
-                          className="faq-answer-content"
+                          className="text-gray-700 text-sm sm:text-base md:text-lg mb-1 md:mb-[5px]"
                         >
                           {faq.answer}
                         </motion.p>

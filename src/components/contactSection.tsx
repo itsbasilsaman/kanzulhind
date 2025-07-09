@@ -96,11 +96,10 @@ export default function ContactSection() {
               data-name="Email Form" 
               method="get" 
               className="contact-form"
-              data-wf-page-id="65eeabab9011c8bfdbb4f7ec" 
-              data-wf-element-id="4267cb7f-5448-5e07-55aa-a7736fcaf5e2"
+         
               onSubmit={handleSubmit}
             >
-              <motion.div custom={1} variants={itemVariants}>
+              <motion.div custom={1} variants={itemVariants} className='w-full'>
                 <input 
                   className="contact-text-field w-input" 
                   maxLength={256} 
@@ -114,7 +113,7 @@ export default function ContactSection() {
                 />
               </motion.div>
               
-              <motion.div custom={2} variants={itemVariants}>
+              <motion.div custom={2} variants={itemVariants} className='w-full'>
                 <input 
                   className="contact-text-field w-input" 
                   maxLength={256} 
@@ -129,7 +128,7 @@ export default function ContactSection() {
                 />
               </motion.div>
               
-              <motion.div custom={3} variants={itemVariants}>
+              <motion.div custom={3} variants={itemVariants} className='w-full'>
                 <textarea
                   placeholder="Your Message" 
                   maxLength={5000} 

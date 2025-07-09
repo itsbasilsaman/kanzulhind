@@ -36,6 +36,10 @@ export default function Navbar() {
     { name: "Contact Us", href: "/contact" },
   ]
 
+  const isHome = pathname === "/";
+  const isProducts = pathname.startsWith("/products");
+  const isContact = pathname.startsWith("/contact");
+
   // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -57,7 +61,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full bg-white z-40 border-b border-gray-100 z-50  ${montserrat.variable}`}>
+      <header className={`fixed top-0 left-0 w-full bg-white  border-b border-gray-100 z-50  ${montserrat.variable}`}>
         <div className="container mx-auto px-4">
           {/* Desktop Header */}
           <div className="hidden sm:flex items-center justify-between h-16 lg:h-20">
@@ -95,14 +99,11 @@ export default function Navbar() {
             <div className="flex items-center space-x-4">
              
 
-              {/* Like/Heart Icon */}
-              <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
-                <Heart className="w-5 h-5 text-gray-700 group-hover:text-red-500 group-hover:fill-red-500 transition-all duration-200 transform group-hover:scale-110" />
-              </button>
+             
 
               {/* WhatsApp Icon - Hidden on mobile */}
               <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
-              <FaWhatsapp  className="w-5 h-5 text-green-600 group-hover:text-green-600 transition-colors duration-200" />              </button>
+              <FaWhatsapp  className="w-6 h-6 text-green-600 group-hover:text-green-600 transition-colors duration-200" />              </button>
 
               {/* Language Switcher Toggle - Compact, Themed */}
               <button
@@ -196,11 +197,11 @@ export default function Navbar() {
      <Link href={'/'}>
      <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-          <svg className="w-6 h-6 text-[#41574B]" fill="currentColor" viewBox="0 0 24 24">
+          <svg className={`w-6 h-6 ${isHome ? "text-[#41574B]" : "text-gray-500"} group-hover:text-[#41574B] transition-colors duration-200`} fill="currentColor" viewBox="0 0 24 24">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
           </svg>
         </div>
-        <span className="text-xs font-medium text-[#41574B]">Home</span>
+        <span className={`text-xs font-medium ${isHome ? "text-[#41574B]" : "text-gray-500"} group-hover:text-[#41574B] transition-colors duration-200`}>Home</span>
       </button>
      </Link>
 
@@ -211,12 +212,12 @@ export default function Navbar() {
       <Link href={'/products'}>
       <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-        <AiFillProduct className="w-6 h-6 text-gray-500 group-hover:text-[#242e29] transition-colors duration-200" />
+        <AiFillProduct className={`w-6 h-6 ${isProducts ? "text-[#41574B]" : "text-gray-500"} group-hover:text-[#41574B] transition-colors duration-200`} />
           <span className="absolute -top-2 -right-2 bg-[#41574B] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
             4
           </span>
         </div>
-        <span className="text-xs font-medium text-gray-500 group-hover:text-[#27322c] transition-colors duration-200">
+        <span className={`text-xs font-medium ${isProducts ? "text-[#41574B]" : "text-gray-500"} group-hover:text-[#41574B] transition-colors duration-200`}>
           Products
         </span>
       </button>
@@ -226,9 +227,9 @@ export default function Navbar() {
         <Link href={'/contact'}>
           <button className="flex flex-col items-center space-y-1 py-2 px-3 rounded-lg group">
         <div className="relative">
-          <IoIosContacts className="w-6 h-6 text-gray-500 group-hover:text-green-500 transition-colors duration-200"/>
+          <IoIosContacts className={`w-6 h-6 ${isContact ? "text-[#41574B]" : "text-gray-500"} group-hover:text-green-500 transition-colors duration-200`}/>
         </div>
-        <span className="text-xs font-medium text-gray-500 group-hover:text-[#1b211e] transition-colors duration-200">
+        <span className={`text-xs font-medium ${isContact ? "text-[#41574B]" : "text-gray-500"} group-hover:text-[#1b211e] transition-colors duration-200`}>
           Contact
         </span>
         </button>

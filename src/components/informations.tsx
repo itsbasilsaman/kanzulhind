@@ -76,7 +76,7 @@ export default function Informations() {
               >
                 <div className="our-company-card-icon-bg">
                   <Image
-                    src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                    src="/about-list-icon-tick.svg"
                     width={50}
                     height={50}
                     loading="lazy"
@@ -91,7 +91,7 @@ export default function Informations() {
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
-                            src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                            src="/about-list-icon-tick.svg"
                             width={20}
                             height={20}
                             loading="lazy"
@@ -115,7 +115,7 @@ export default function Informations() {
               >
                 <div className="our-company-card-icon-bg">
                   <Image
-                    src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                    src="/about-list-icon-tick.svg"
                     width={50}
                     height={50}
                     loading="lazy"
@@ -130,7 +130,7 @@ export default function Informations() {
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
-                            src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                            src="/about-list-icon-tick.svg"
                             width={20}
                             height={20}
                             loading="lazy"
@@ -154,7 +154,7 @@ export default function Informations() {
               >
                 <div className="our-company-card-icon-bg">
                   <Image
-                    src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                    src="/about-list-icon-tick.svg"
                     width={50}
                     height={50}
                     loading="lazy"
@@ -169,7 +169,7 @@ export default function Informations() {
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
-                            src="/65ead98a4be3ad22160d41af_about-list-icon-tick.svg"
+                            src="/about-list-icon-tick.svg"
                             width={20}
                             height={20}
                             loading="lazy"
