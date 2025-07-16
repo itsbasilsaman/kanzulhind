@@ -2,6 +2,8 @@
 
 import { useState, useRef } from 'react';
 import { motion, easeOut } from 'framer-motion';
+import LocalizedText from "@/components/LocalizedText";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const { lang } = useLanguage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -85,7 +88,7 @@ export default function ContactSection() {
                 variants={itemVariants}
                 className="section-title font-medium"
               >
-                Get in touch!
+                <LocalizedText en="Get in touch!" ar="تواصل معنا!" />
               </motion.h2>
             </div>
             
@@ -105,7 +108,7 @@ export default function ContactSection() {
                   maxLength={256} 
                   name="name" 
                   data-name="Name" 
-                  placeholder="Your Name"
+                  placeholder={lang === 'EN' ? 'Your Name' : 'اسمك'}
                   type="text" 
                   id="name"
                   value={formData.name}
@@ -119,7 +122,7 @@ export default function ContactSection() {
                   maxLength={256} 
                   name="email" 
                   data-name="Email" 
-                  placeholder="Email Address" 
+                  placeholder={lang === 'EN' ? 'Email Address' : 'البريد الإلكتروني'}
                   type="email" 
                   id="email" 
                   required
@@ -130,7 +133,7 @@ export default function ContactSection() {
               
               <motion.div custom={3} variants={itemVariants} className='w-full'>
                 <textarea
-                  placeholder="Your Message" 
+                  placeholder={lang === 'EN' ? 'Your Message' : 'رسالتك'}
                   maxLength={5000} 
                   id="field" 
                   name="message" 
@@ -144,12 +147,12 @@ export default function ContactSection() {
               <motion.div custom={4} variants={itemVariants} className="form-button-wrap">
                 <motion.button
                   type="submit"
-                  data-wait="Please wait..."
+                  data-wait={lang === 'EN' ? 'Please wait...' : 'يرجى الانتظار...'}
                   className="primary-button w-button"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Send Message
+                  <LocalizedText en="Send Message" ar="إرسال الرسالة" />
                 </motion.button>
               </motion.div>
             </form>
@@ -161,7 +164,7 @@ export default function ContactSection() {
                 exit={{ opacity: 0 }}
                 className="w-form-done"
               >
-                <div>Thank you! Your submission has been received!</div>
+                <LocalizedText en="Thank you! Your submission has been received!" ar="شكراً لك! تم استلام رسالتك بنجاح!" />
               </motion.div>
             )}
             
@@ -172,7 +175,7 @@ export default function ContactSection() {
                 exit={{ opacity: 0 }}
                 className="w-form-fail"
               >
-                <div>Oops! Something went wrong while submitting the form.</div>
+                <LocalizedText en="Oops! Something went wrong while submitting the form." ar="عذراً! حدث خطأ أثناء إرسال النموذج." />
               </motion.div>
             )}
             
@@ -215,7 +218,7 @@ export default function ContactSection() {
                 />
               </div>
               <div className="footer-contact-text-wrap">
-                <p className="footer-contact-text">123 Greenfield Avenue<br />Farmville, USA</p>
+                <p className="footer-contact-text">Rajiv Gandhi Bypass<br />Manjeri, Kerala 676121</p>
               </div>
             </motion.div>
             
@@ -228,11 +231,11 @@ export default function ContactSection() {
                 />
               </div>
               <div className="footer-contact-text-wrap">
-                <a href="mailto:info@farmfresh.com" className="footer-contact-text footer-text-link">
-                  info@farmfresh.com
+                <a href="mailto:info@kanzulhind.com" className="footer-contact-text footer-text-link">
+                  info@kanzulhind.com
                 </a>
-                <a href="mailto:orders@farmfresh.com" className="footer-contact-text footer-text-link">
-                  orders@farmfresh.com
+                <a href="mailto:orders@kanzulhind.com" className="footer-contact-text footer-text-link">
+                  orders@kanzulhind.com
                 </a>
               </div>
             </motion.div>
@@ -246,11 +249,13 @@ export default function ContactSection() {
                 />
               </div>
               <div className="footer-contact-text-wrap">
-                <a href="tel:+1(354)442-7422" className="footer-contact-text footer-text-link">
-                  +1 (354) 442-7422
-                </a>
-                <a href="tel:+1(354)322-5434" className="footer-contact-text footer-text-link">
-                  +1 (354) 322-5434
+                <a
+                  href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+                  className="footer-contact-text footer-text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +966571961404
                 </a>
               </div>
             </motion.div>

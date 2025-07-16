@@ -10,6 +10,7 @@ import { Montserrat } from "next/font/google";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
 import { IoIosContacts } from "react-icons/io";
+import { useLanguage } from "@/components/LanguageContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -22,13 +23,9 @@ export default function Navbar() {
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const pathname = usePathname();
-  // Add language state
-  const [lang, setLang] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('lang') || 'EN';
-    }
-    return 'EN';
-  });
+  // Remove local lang state
+  // const [lang, setLang] = useState<string>(() => { ... });
+  const { lang, setLang } = useLanguage();
 
   const navigationLinks = [
     { name: "Home", href: "/" },
@@ -61,7 +58,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full bg-white  border-b border-gray-100 z-50  ${montserrat.variable}`}>
+      <header dir="ltr" className={`fixed top-0 left-0 w-full bg-white  border-b border-gray-100 z-50  ${montserrat.variable}`}>
         <div className="container mx-auto px-4">
           {/* Desktop Header */}
           <div className="hidden sm:flex items-center justify-between h-16 lg:h-20">
@@ -191,7 +188,7 @@ export default function Navbar() {
         </div>
       </header>
    
-   <div className="fixed bottom-1 left-0 mx-2 right-0 bg-white border-t border-gray-200 px-4 py-2 sm:hidden z-40 rounded-full">
+   <div dir="ltr" className="fixed bottom-1 left-0 mx-2 right-0 bg-white border-t border-gray-200 px-4 py-2 sm:hidden z-40 rounded-full">
     <div className="flex items-center justify-around">
       {/* Home */}
      <Link href={'/'}>

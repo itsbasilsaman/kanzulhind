@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
+import LocalizedText from "@/components/LocalizedText";
 
 export default function MiddleBanner() {
   const [isVisible, setIsVisible] = useState(false)
@@ -67,7 +68,7 @@ export default function MiddleBanner() {
                 lineHeight: 1.3,
               }}
             >
-              Subscribe to get <span className="block sm:inline font-extrabold">15% OFF</span> on your first order!
+              <LocalizedText en="Discover unique Antiques, Clothing, Spices, and Rice at Kanzulhind." ar="اكتشف التحف الفريدة والملابس والتوابل والأرز في كنز الهند." />
             </span>
 
             {/* Subtext */}
@@ -84,7 +85,7 @@ export default function MiddleBanner() {
                 marginBottom: "16px",
               }}
             >
-              Lorem ipsum dolor sit amet consectetur erat eleifend ac ut lorem posuere vulputate est auctor pharetra.
+              <LocalizedText en="Each product features images, details, and origin for easy selection." ar="كل منتج يحتوي على صور وتفاصيل ومنشأ لسهولة الاختيار." />
             </p>
 
             {/* Buttons */}
@@ -105,7 +106,7 @@ export default function MiddleBanner() {
                   color: "#333333",
                 }}
               >
-                Shop now
+                <LocalizedText en="Inquire instantly" ar="استفسر فوراً" />
               </button>
 
               {/* Browse all products Button */}
@@ -120,7 +121,7 @@ export default function MiddleBanner() {
                   minWidth: "180px",
                 }}
               >
-                Browse all products
+                <LocalizedText en="Fast, personal, and convenient process" ar="عملية سريعة وشخصية ومريحة" />
               </span>
             </div>
           </div>

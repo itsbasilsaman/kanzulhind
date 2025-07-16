@@ -3,30 +3,31 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus } from 'react-icons/fa';
+import LocalizedText from "@/components/LocalizedText";
 
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const faqs = [
     {
-      question: 'What are some sustainable farming practices?',
-      answer: 'Sustainable farming uses rotation, cover crops, organics, and IPM to sustain productivity while reducing environmental impact.'
+      question: 'How do I inquire about a product on Kanzulhind?',
+      answer: 'Click the inquiry button on any product page to send your request directly to our team.'
     },
     {
-      question: 'How can I improve soil health on my farm?',
-      answer: 'Improve soil health by composting, applying manure, reducing tillage to prevent erosion, rotating crops, and using lime or gypsum to balance pH levels.'
+      question: 'What types of products are featured on Kanzulhind?',
+      answer: 'We showcase antiques, clothing, spices, and a variety of rice types with detailed information.'
     },
     {
-      question: 'What crops are best suited for my region\'s climate?',
-      answer: 'Select crops suited to your region\'s climate with guidance from local experts or experienced farmers.'
+      question: 'Can I view product origin and specifications?',
+      answer: 'Yes, each product page provides images, specifications, and origin details for your review.'
     },
     {
-      question: 'How can I control pests and diseases without harmful chemicals?',
-      answer: 'Cultural practices like crop rotation, disease-resistant crops, natural predators, and beneficial insects manage pests and diseases eco-friendly.'
+      question: 'Is the inquiry process fast and personal?',
+      answer: 'Our platform allows one-click inquiries, making your experience quick, personal, and convenient.'
     },
     {
-      question: 'What are the benefits of diversifying my farm\'s products?',
-      answer: 'Diversify farm products for risk reduction, soil health, wider customer base, and resilience to market or climate changes.'
+      question: 'Why choose Kanzulhind for unique products?',
+      answer: 'We offer a curated selection, easy inquiries, and detailed product info for a seamless experience.'
     }
   ];
 
@@ -35,7 +36,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="pt-10 md:pt-[60px] bg-white faq-section">
+    <section className="pt-10 md:pt-[60px] bg-white faq-section" dir="ltr">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="max-w-full md:max-w-4xl lg:max-w-6xl xl:max-w-8xl mx-auto">
           <motion.div 
@@ -44,7 +45,7 @@ export default function FAQSection() {
             transition={{ duration: 0.5 }}
             className="mb-6 md:mb-10 text-center"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium section-title max-w-[90vw] md:max-w-[485px] mx-auto">Frequently Asked Questions</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium section-title max-w-[90vw] md:max-w-[485px] mx-auto"><LocalizedText en="Frequently Asked Questions" ar="الأسئلة الشائعة" /></h2>
           </motion.div>
           <div className="bg-[#eaf4ee] rounded-2xl mt-6 md:mt-10 p-4 sm:p-6 md:p-[40px_60px_60px] shadow-sm">
             {faqs.map((faq, index) => (
@@ -59,7 +60,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(index)}
                 >
                   <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-800 text-left flex-1 whitespace-pre-wrap">
-                    {faq.question}
+                    <LocalizedText en={faq.question} ar={faq.question} />
                   </div>
                   <motion.div
                     animate={{ rotate: activeIndex === index ? 45 : 0 }}
@@ -87,7 +88,7 @@ export default function FAQSection() {
                           transition={{ delay: 0.15 }}
                           className="text-gray-700 text-sm sm:text-base md:text-lg mb-1 md:mb-[5px]"
                         >
-                          {faq.answer}
+                          <LocalizedText en={faq.answer} ar={faq.answer} />
                         </motion.p>
                       </div>
                     </motion.nav>

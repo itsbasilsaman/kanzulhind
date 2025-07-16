@@ -13,17 +13,15 @@ import DetailSection from "@/components/detailsSection";
 export default function Home() {
   return (
      <>
-     <MainBanner/>
+      <MainBanner/>
       <ServiceSection/>
       <StatsComponent/>
       <Informations/>
       <DetailSection/>
-      <MiddleBanner/>
+      <MiddleBanner/>  
       <FAQSection/>
       <TestimonialSection/>
-      
       <FooterCTA/>
-      
      </>
   );
 }

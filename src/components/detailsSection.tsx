@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import LocalizedText from "@/components/LocalizedText";
 
 const DetailSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,14 +39,14 @@ const DetailSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="our-products-section mt-8 lg:mt-28">
+    <section ref={sectionRef} className="our-products-section mt-8 lg:mt-28" dir="ltr">
       <div className="w-layout-blockcontainer container w-container">
         <div className="why-us-wrap">
           <div 
             data-animate
             className="why-us-title-wrap animate-fadeInUp"
           >
-            <h2 className="section-title">Farm-to-Home Produce Directly</h2>
+            <h2 className="section-title"><LocalizedText en="Curated Product Inquiry Platform" ar="منصة استفسار عن المنتجات المختارة" /></h2>
           </div>
           <div 
             data-animate
@@ -57,26 +58,26 @@ const DetailSection = () => {
                   <div className="why-us-count-list-wrap">
                     <h3 className="why-us-count-number-text">25K</h3>
                     <p className="why-us-count-content">
-                      Thousands of Trusting Customers Choose Our Services
+                      Thousands of users explore unique products daily here.
                     </p>
                   </div>
-                  <p className="why-us-count-list-text">Clients Trust Us</p>
+                  <p className="why-us-count-list-text">Inquiries Made</p>
                 </div>
                 <div className="why-us-wrap-line-break"></div>
                 <div className="why-us-count-main-wrap">
                   <div className="why-us-count-list-wrap">
                     <h3 className="why-us-count-number-text">10M</h3>
                     <p className="why-us-count-content">
-                      Organic products delivered with sustainable commitment
+                      Products from antiques to rice, all in one place.
                     </p>
                   </div>
-                  <p className="why-us-count-list-text">Organic Products Sold</p>
+                  <p className="why-us-count-list-text">Products Showcased</p>
                 </div>
               </div>
             </div>
             <div className="why-select-us-wrap">
               <div className="why-select-us-content-list-wrap">
-                <h3 className="why-select-us-title">Why select us?</h3>
+                <h3 className="why-select-us-title">Why Kanzulhind?</h3>
                 <div className="why-select-us-whole-list-wrap">
                   <div 
                     data-animate
@@ -92,9 +93,9 @@ const DetailSection = () => {
                       />
                     </div>
                     <div className="why-select-us-item-content-wrap">
-                      <h4 className="why-select-us-item-title">Forever Fresh</h4>
+                      <h4 className="why-select-us-item-title">One-Click Inquiry</h4>
                       <p className="why-select-us-content">
-                        Fresh, organic harvests guarantee peak flavor and nutrition in every bite.
+                        Instantly connect with sellers for any product you like.
                       </p>
                     </div>
                   </div>
@@ -112,13 +113,13 @@ const DetailSection = () => {
                       />
                     </div>
                     <div className="why-select-us-item-content-wrap">
-                      <h4 className="why-select-us-item-title">Chemical-Free</h4>
+                      <h4 className="why-select-us-item-title">Diverse Selection</h4>
                       <p className="why-select-us-content">
-                        Embrace organic farming: excellence sans synthetics. Witness soil fertility,
-                        biodiversity, and exceptional agricultural products through natural methods.
+                        Antiques, clothing, spices, and rice, all with details.
                       </p>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>

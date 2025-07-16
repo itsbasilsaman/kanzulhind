@@ -65,11 +65,11 @@ export default function FooterCTA() {
         >
           <div className="footer-cta-content-wrap">
             <h2 className="footer-cta-title group">
-              Join Our Mailing List
+              Discover   Products
               <span className="block h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </h2>
             <p className="footer-cta-content">
-              Join our list for the latest agricultural news and updates.
+              Inquire instantly about Antiques, Clothing, Spices, or Rice.
             </p>
           </div>
           

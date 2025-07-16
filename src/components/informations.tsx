@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import LocalizedText from "@/components/LocalizedText";
 
 export default function Informations() {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -59,11 +60,9 @@ export default function Informations() {
               ref={titleRef}
               className="our-company-title-wrap"
             >
-              <h2 className="section-title">Authentic Indian Products for Your Lifestyle</h2>
+              <LocalizedText en="Authentic Indian Products for Your Lifestyle" ar="منتجات هندية أصلية لأسلوب حياتك" />
               <div className="section-content-wrap">
-                <p className="section-content">
-                  Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East.
-                </p>
+                <LocalizedText en="Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East." ar="منتجات التراث الهندي الفاخرة - التوابل، الأقمشة، الأرز، والتحف، تجلب الهند الأصيلة إلى الشرق الأوسط." />
               </div>
             </div>
             <div className="our-company-card-whole-grid">

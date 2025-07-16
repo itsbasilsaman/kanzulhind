@@ -190,9 +190,14 @@ export default function Footer() {
                       />
                     </div>
                     <div className="footer-contact-text-wrap">
-                      <Link href="tel:+919074851748" className="footer-contact-text footer-text-link hover:underline">
-                        +91 90748 51748
-                      </Link>
+                    <a
+                  href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+                  className="footer-contact-text footer-text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +966571961404
+                </a>
                     </div>
                   </div>
                 </div>

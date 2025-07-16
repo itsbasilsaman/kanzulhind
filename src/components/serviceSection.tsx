@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import LocalizedText from "@/components/LocalizedText";
 
 const ServiceSection = () => {
   const containerVariants = {
@@ -70,10 +71,10 @@ const ServiceSection = () => {
               className="service-title-wrap"
             >
               <motion.h2   className="section-title">
-                Authentic Indian Products for Your Lifestyle
+                <LocalizedText en="Authentic Indian Products for Your Lifestyle" ar="تحف هندية للحياة الخاصة بك" />
               </motion.h2>
               <motion.p   className="section-content">
-                Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East.
+                <LocalizedText en="Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East." ar="منتجات هندية فاخرة للتراث - التوابل، الأقمشة، الأرز، والتحف، إحاطة أصلية إلى الشرق الأوسط." />
               </motion.p>
             </motion.div>
 
@@ -108,10 +109,12 @@ const ServiceSection = () => {
                         </div>
                         <div className="service-card-content-wrap">
                           <div className="service-card-title">
-                            {service.title}
+                            <LocalizedText en={service.title} ar={service.title} />
                           </div>
                           <div className="service-title-bar-line"></div>
-                          <p className="service-card-content">{service.description}</p>
+                          <p className="service-card-content">
+                            <LocalizedText en={service.description} ar={service.description} />
+                          </p>
                         </div>
                       </Link>
                     </motion.div>
