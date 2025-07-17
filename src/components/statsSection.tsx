@@ -10,12 +10,12 @@ export default function StatsComponent() {
     },
     {
       icon: Download,
-      value: "200+",
+      value: "400+",
       label: "Products available",
     },
     {
       icon: Smile,
-      value: "90+",
+      value: "180+",
       label: "Happy clients",
     },
     {
@@ -26,7 +26,7 @@ export default function StatsComponent() {
   ]
 
   return (
-    <div className="w-full py-12 px-4">
+    <div className="w-full py-12 px-4" style={{ direction: 'ltr' }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-12">
           {stats.map((stat, index) => {

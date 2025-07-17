@@ -99,8 +99,16 @@ export default function Navbar() {
              
 
               {/* WhatsApp Icon - Hidden on mobile */}
-              <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
-              <FaWhatsapp  className="w-6 h-6 text-green-600 group-hover:text-green-600 transition-colors duration-200" />              </button>
+              <a
+                href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+              >
+                <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-200 group">
+                  <FaWhatsapp className="w-6 h-6 text-green-600 group-hover:text-green-600 transition-colors duration-200" />
+                </button>
+              </a>
 
               {/* Language Switcher Toggle - Compact, Themed */}
               <button

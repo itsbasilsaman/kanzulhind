@@ -21,40 +21,58 @@ const ServiceSection = () => {
 
   const services = [
     {
-      title: "Indian Antiques",
+      title: { en: "Indian Antiques", ar: "تحف هندية" },
       href: "/antique-single",
       icon: "https://lionandunicorn.com/wp-content/uploads/2022/12/how-to-identify-rare-and-valuable-antiques-near-me-scaled.jpg",
-      description: "Discover authentic Indian heritage pieces - from traditional jewelry to vintage artifacts, bringing centuries of culture to your collection."
+      description: {
+        en: "Discover authentic Indian heritage pieces - from traditional jewelry to vintage artifacts, bringing centuries of culture to your collection.",
+        ar: "اكتشف قطع التراث الهندي الأصيلة - من المجوهرات التقليدية إلى التحف القديمة، جالبًا قرونًا من الثقافة إلى مجموعتك."
+      }
     },
     {
-      title: "Traditional Textiles",
+      title: { en: "Traditional Textiles", ar: "أقمشة تقليدية" },
       href: "/cloths-single",
       icon: "https://www.modeintextile.fr/wp-content/uploads/2016/05/ERGO.jpg",
-      description: "Premium Indian fabrics and traditional garments - from silk sarees to handcrafted cotton, showcasing India's rich textile heritage."
+      description: {
+        en: "Premium Indian fabrics and traditional garments - from silk sarees to handcrafted cotton, showcasing India's rich textile heritage.",
+        ar: "أقمشة هندية فاخرة وملابس تقليدية - من الساري الحريري إلى القطن المصنوع يدويًا، تعرض تراث الهند الغني في الأقمشة."
+      }
     },
     {
-      title: "Pure Indian Spices",
+      title: { en: "Pure Indian Spices", ar: "توابل هندية نقية" },
       href: "/spices-single",
       icon: "https://wallpaperbat.com/img/867713-indian-spices-wallpaper.jpg",
-      description: "Authentic Indian spices sourced directly from farms - cardamom, turmeric, saffron and more, delivering authentic flavors to your kitchen."
+      description: {
+        en: "Authentic Indian spices sourced directly from farms - cardamom, turmeric, saffron and more, delivering authentic flavors to your kitchen.",
+        ar: "توابل هندية أصلية من المزارع مباشرة - الهيل، الكركم، الزعفران والمزيد، تقدم نكهات أصيلة لمطبخك."
+      }
     },
     {
-      title: "Premium Indian Rice",
+      title: { en: "Premium Indian Rice", ar: "أرز هندي فاخر" },
       href: "/rices-single",
       icon: "https://www.thedailymeal.com/img/gallery/types-of-rice-and-how-to-cook-them/l-intro-1676410300.jpg",
-      description: "Finest quality Indian rice varieties - Basmati, Jasmine, and specialty grains, bringing the authentic taste of India to your table."
+      description: {
+        en: "Finest quality Indian rice varieties - Basmati, Jasmine, and specialty grains, bringing the authentic taste of India to your table.",
+        ar: "أفضل أنواع الأرز الهندي - بسمتي، ياسمين، وحبوب خاصة، تجلب الطعم الأصيل للهند إلى مائدتك."
+      }
     },
     {
-      title: "Handcrafted Pottery",
+      title: { en: "Handcrafted Pottery", ar: "فخار يدوي الصنع" },
       href: "/pottery-single",
       icon: "https://images.unsplash.com/photo-1560846310-485ef935c577?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "Beautiful handcrafted Indian pottery and ceramics - from traditional clay pots to decorative pieces, showcasing centuries-old craftsmanship."
+      description: {
+        en: "Beautiful handcrafted Indian pottery and ceramics - from traditional clay pots to decorative pieces, showcasing centuries-old craftsmanship.",
+        ar: "فخار وخزف هندي جميل مصنوع يدويًا - من الأواني الطينية التقليدية إلى القطع الزخرفية، يعرض حرفية تعود لقرون."
+      }
     },
     {
-      title: "Ayurvedic Products",
+      title: { en: "Ayurvedic Products", ar: "منتجات الأيورفيدا" },
       href: "/ayurvedic-single",
       icon: "https://images.pexels.com/photos/7148527/pexels-photo-7148527.jpeg?_gl=1*8qqiyu*_ga*MTM0MzMxOTA0NS4xNzIxMDQ2ODAy*_ga_8JE65Q40S6*czE3NTE2OTQwNTEkbzExJGcxJHQxNzUxNjk4Nzk0JGo1MSRsMCRoMA..",
-      description: "Natural Ayurvedic products and wellness items - herbal remedies, essential oils, and traditional healing products for holistic health."
+      description: {
+        en: "Natural Ayurvedic products and wellness items - herbal remedies, essential oils, and traditional healing products for holistic health.",
+        ar: "منتجات الأيورفيدا الطبيعية وعناصر العافية - علاجات عشبية، زيوت أساسية، ومنتجات علاجية تقليدية للصحة الشاملة."
+      }
     },
   ];
 
@@ -109,11 +127,11 @@ const ServiceSection = () => {
                         </div>
                         <div className="service-card-content-wrap">
                           <div className="service-card-title">
-                            <LocalizedText en={service.title} ar={service.title} />
+                            <LocalizedText en={service.title.en} ar={service.title.ar} />
                           </div>
                           <div className="service-title-bar-line"></div>
                           <p className="service-card-content">
-                            <LocalizedText en={service.description} ar={service.description} />
+                            <LocalizedText en={service.description.en} ar={service.description.ar} />
                           </p>
                         </div>
                       </Link>

@@ -1,10 +1,30 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import LocalizedText from "@/components/LocalizedText";
+import React, { useRef, useEffect, useState } from "react";
 
 export default function HandwashInterface() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="h-auto lg:h-[85vh] bg-white">
+    <div ref={sectionRef} className="h-auto lg:h-[85vh] bg-white">
       {/* Mobile Layout */}
       <div className="lg:hidden">
         {/* Video Section - Mobile */}
@@ -16,20 +36,24 @@ export default function HandwashInterface() {
         </div>
 
         {/* Content Section - Mobile */}
-        <div className="linear-section-bg text-white p-6 min-h-[50vh] flex flex-col justify-center">
-          <h1 className="text-4xl font-light leading-tight mb-6"><LocalizedText en="Discover Unique Antiques, Clothing, Spices & Rice" ar="اكتشف التحف الفريدة والملابس والتوابل والأرز" /></h1>
+        <div
+          className={`linear-section-bg p-6 min-h-[37vh] flex flex-col justify-center transition-all duration-700 ease-out transform
+            ${isVisible ? 'opacity-100 translate-y-0 translate-x-0' : 'opacity-0 translate-y-12 -translate-x-8'}
+          `}
+        >
+          <h1 className="text-4xl font-light leading-tight mb-6"><LocalizedText en="Unlock the Treasures of India" ar="اكتشف كنوز الهند" /></h1>
           <p className="text-gray-300 mb-8 leading-relaxed">
-            <LocalizedText en="Explore Kanzulhind’s curated collection and inquire about antiques, attire, spices, and rice with a single click." ar="استكشف مجموعة كنز الهند المختارة واستفسر عن التحف والملابس والتوابل والأرز بنقرة واحدة." />
+            <LocalizedText en="Experience the essence of India with Kanzulhind’s handpicked collection." ar="اختبر جوهر الهند مع مجموعة كنز الهند المختارة بعناية." />
           </p>
-          <Button className="bg-[#41574B] rounded-[12px] text-black hover:bg-gray-100 w-fit px-8 py-3  font-medium">
-          <a
-                  href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
-                  className="footer-contact-text footer-text-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LocalizedText en="Inquire Now" ar="استفسر الآن" />
-                </a>
+          <Button className="bg-[#41574B] rounded-[12px] w-fit px-8 py-3 font-medium transition-all duration-300 ease-in-out hover:bg-gray-100">
+            <a
+              href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+              className="footer-contact-text footer-text-link !text-white hover:!text-[#41574B] !no-underline hover:!no-underline transition-all duration-300 ease-in-out"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LocalizedText en="Inquire Now" ar="استفسر الآن" />
+            </a>
           </Button>
         </div>
       </div>
@@ -37,20 +61,24 @@ export default function HandwashInterface() {
       {/* Desktop Layout */}
       <div className="hidden lg:flex min-h-screen">
         {/* Content Section - Desktop */}
-        <div className="w-1/2 linear-section-bg text-white flex flex-col justify-center px-12">
-          <h1 className="text-6xl font-light leading-tight mb-8"><LocalizedText en="Discover Unique Antiques, Clothing, Spices & Rice" ar="اكتشف التحف الفريدة والملابس والتوابل والأرز" /></h1>
-          <p className="text-gray-300 mb-12 text-lg leading-relaxed max-w-md">
-            <LocalizedText en="Explore Kanzulhind’s curated collection and inquire about antiques, attire, spices, and rice with a single click." ar="استكشف مجموعة كنز الهند المختارة واستفسر عن التحف والملابس والتوابل والأرز بنقرة واحدة." />
+        <div
+          className={`w-1/2 linear-section-bg text-white flex flex-col justify-center px-12 transition-all duration-700 ease-out transform
+            ${isVisible ? 'opacity-100 translate-y-0 translate-x-0' : 'opacity-0 translate-y-12 -translate-x-8'}
+          `}
+        >
+          <h1 className="text-6xl font-light leading-tight mb-8"><LocalizedText en="Unlock the Treasures of India: Antiques, Fashion, Spices & Rice" ar="اكتشف كنوز الهند: التحف، الأزياء، التوابل والأرز" /></h1>
+          <p className="text-gray-300 mb-12 text-lg leading-relaxed max-w-md pb-2">
+            <LocalizedText en="Experience the essence of India with Kanzulhind’s handpicked collection. From rare antiques and elegant attire to aromatic spices and premium rice." ar="اختبر جوهر الهند مع مجموعة كنز الهند المختارة بعناية. من التحف النادرة والأزياء الأنيقة إلى التوابل العطرية والأرز الفاخر—اكتشف واستفسر واقتنِ شيئًا مميزًا بنقرة واحدة فقط." />
           </p>
-          <Button className="bg-[#41574B] rounded-[12px] text-black hover:bg-gray-100 w-fit px-8 py-3   font-medium">
-          <a
-                  href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
-                  className="footer-contact-text footer-text-link no-underline text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LocalizedText en="Inquire Now" ar="استفسر الآن" />
-                </a>
+          <Button className="bg-[#41574B] rounded-[12px] w-fit  px-8 py-3 font-medium transition-all duration-300 ease-in-out hover:bg-gray-100">
+            <a
+              href="https://wa.me/966571961404?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+              className="footer-contact-text footer-text-link !text-white hover:!text-[#41574B] !no-underline hover:!no-underline transition-all duration-300 ease-in-out"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LocalizedText en="Inquire Now" ar="استفسر الآن" />
+            </a>
           </Button>
         </div>
 
@@ -60,9 +88,6 @@ export default function HandwashInterface() {
             <source src="/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          
-           
         </div>
       </div>
     </div>

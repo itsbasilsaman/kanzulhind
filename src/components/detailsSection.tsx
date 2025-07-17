@@ -58,26 +58,32 @@ const DetailSection = () => {
                   <div className="why-us-count-list-wrap">
                     <h3 className="why-us-count-number-text">25K</h3>
                     <p className="why-us-count-content">
-                      Thousands of users explore unique products daily here.
+                      <LocalizedText en="Thousands of users explore unique products daily here." ar="آلاف المستخدمين يستكشفون منتجات فريدة يوميًا هنا." />
                     </p>
                   </div>
-                  <p className="why-us-count-list-text">Inquiries Made</p>
+                  <p className="why-us-count-list-text">
+                    <LocalizedText en="Inquiries Made" ar="الاستفسارات المقدمة" />
+                  </p>
                 </div>
                 <div className="why-us-wrap-line-break"></div>
                 <div className="why-us-count-main-wrap">
                   <div className="why-us-count-list-wrap">
                     <h3 className="why-us-count-number-text">10M</h3>
                     <p className="why-us-count-content">
-                      Products from antiques to rice, all in one place.
+                      <LocalizedText en="Products from antiques to rice, all in one place." ar="منتجات من التحف إلى الأرز، جميعها في مكان واحد." />
                     </p>
                   </div>
-                  <p className="why-us-count-list-text">Products Showcased</p>
+                  <p className="why-us-count-list-text">
+                    <LocalizedText en="Products Showcased" ar="المنتجات المعروضة" />
+                  </p>
                 </div>
               </div>
             </div>
             <div className="why-select-us-wrap">
               <div className="why-select-us-content-list-wrap">
-                <h3 className="why-select-us-title">Why Kanzulhind?</h3>
+                <h3 className="why-select-us-title">
+                  <LocalizedText en="Why Kanzulhind?" ar="لماذا كنز الهند؟" />
+                </h3>
                 <div className="why-select-us-whole-list-wrap">
                   <div 
                     data-animate
@@ -93,9 +99,11 @@ const DetailSection = () => {
                       />
                     </div>
                     <div className="why-select-us-item-content-wrap">
-                      <h4 className="why-select-us-item-title">One-Click Inquiry</h4>
+                      <h4 className="why-select-us-item-title">
+                        <LocalizedText en="One-Click Inquiry" ar="استفسار بنقرة واحدة" />
+                      </h4>
                       <p className="why-select-us-content">
-                        Instantly connect with sellers for any product you like.
+                        <LocalizedText en="Instantly connect with sellers for any product you like. With our seamless inquiry system, you can express your interest in a product." ar="تواصل فورًا مع البائعين لأي منتج ترغب به. مع نظام الاستفسار السلس لدينا، يمكنك إبداء اهتمامك بأي منتج بسهولة." />
                       </p>
                     </div>
                   </div>
@@ -113,9 +121,11 @@ const DetailSection = () => {
                       />
                     </div>
                     <div className="why-select-us-item-content-wrap">
-                      <h4 className="why-select-us-item-title">Diverse Selection</h4>
+                      <h4 className="why-select-us-item-title">
+                        <LocalizedText en="Diverse Selection" ar="تشكيلة متنوعة" />
+                      </h4>
                       <p className="why-select-us-content">
-                        Antiques, clothing, spices, and rice, all with details.
+                        <LocalizedText en="Antiques, clothing, spices, and rice, all with details." ar="تحف، ملابس، توابل، وأرز، جميعها مع التفاصيل." />
                       </p>
                     </div>
                   </div>

@@ -10,24 +10,54 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: 'How do I inquire about a product on Kanzulhind?',
-      answer: 'Click the inquiry button on any product page to send your request directly to our team.'
+      question: {
+        en: 'How do I inquire about a product on Kanzulhind?',
+        ar: 'كيف يمكنني الاستفسار عن منتج في كنز الهند؟'
+      },
+      answer: {
+        en: 'Click the inquiry button on any product page to send your request directly to our team.',
+        ar: 'انقر على زر الاستفسار في أي صفحة منتج لإرسال طلبك مباشرة إلى فريقنا.'
+      }
     },
     {
-      question: 'What types of products are featured on Kanzulhind?',
-      answer: 'We showcase antiques, clothing, spices, and a variety of rice types with detailed information.'
+      question: {
+        en: 'What types of products are featured on Kanzulhind?',
+        ar: 'ما أنواع المنتجات المعروضة في كنز الهند؟'
+      },
+      answer: {
+        en: 'We showcase antiques, clothing, spices, and a variety of rice types with detailed information.',
+        ar: 'نعرض التحف، الملابس، التوابل، وأنواع متعددة من الأرز مع معلومات مفصلة.'
+      }
     },
     {
-      question: 'Can I view product origin and specifications?',
-      answer: 'Yes, each product page provides images, specifications, and origin details for your review.'
+      question: {
+        en: 'Can I view product origin and specifications?',
+        ar: 'هل يمكنني معرفة منشأ المنتج ومواصفاته؟'
+      },
+      answer: {
+        en: 'Yes, each product page provides images, specifications, and origin details for your review.',
+        ar: 'نعم، كل صفحة منتج توفر صورًا، مواصفات، وتفاصيل المنشأ لمراجعتك.'
+      }
     },
     {
-      question: 'Is the inquiry process fast and personal?',
-      answer: 'Our platform allows one-click inquiries, making your experience quick, personal, and convenient.'
+      question: {
+        en: 'Is the inquiry process fast and personal?',
+        ar: 'هل عملية الاستفسار سريعة وشخصية؟'
+      },
+      answer: {
+        en: 'Our platform allows one-click inquiries, making your experience quick, personal, and convenient.',
+        ar: 'منصتنا تتيح الاستفسار بنقرة واحدة، لتجربة سريعة، شخصية، ومريحة.'
+      }
     },
     {
-      question: 'Why choose Kanzulhind for unique products?',
-      answer: 'We offer a curated selection, easy inquiries, and detailed product info for a seamless experience.'
+      question: {
+        en: 'Why choose Kanzulhind for unique products?',
+        ar: 'لماذا أختار كنز الهند للمنتجات الفريدة؟'
+      },
+      answer: {
+        en: 'We offer a curated selection, easy inquiries, and detailed product info for a seamless experience.',
+        ar: 'نقدم مجموعة مختارة بعناية، واستفسارات سهلة، ومعلومات مفصلة لمنتجاتنا لتجربة سلسة.'
+      }
     }
   ];
 
@@ -60,7 +90,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(index)}
                 >
                   <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-800 text-left flex-1 whitespace-pre-wrap">
-                    <LocalizedText en={faq.question} ar={faq.question} />
+                    <LocalizedText en={faq.question.en} ar={faq.question.ar} />
                   </div>
                   <motion.div
                     animate={{ rotate: activeIndex === index ? 45 : 0 }}
@@ -88,7 +118,7 @@ export default function FAQSection() {
                           transition={{ delay: 0.15 }}
                           className="text-gray-700 text-sm sm:text-base md:text-lg mb-1 md:mb-[5px]"
                         >
-                          <LocalizedText en={faq.answer} ar={faq.answer} />
+                          <LocalizedText en={faq.answer.en} ar={faq.answer.ar} />
                         </motion.p>
                       </div>
                     </motion.nav>

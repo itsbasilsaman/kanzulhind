@@ -9,6 +9,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import LocalizedText from "@/components/LocalizedText";
 
 export default function Footer() {
   // Animation controls
@@ -83,9 +84,9 @@ export default function Footer() {
                 </Link>
                 
                 <div className="footer-brand-content-wrap">
-                  <h2 className="footer-wrap-title">Welcome to Kanzulhind</h2>
+                  <h2 className="footer-wrap-title"><LocalizedText en="Welcome to Kanzulhind" ar="مرحبًا بكم في كنز الهند" /></h2>
                   <p className="footer-brand-content">
-                    Your trusted source for premium spices, traditional cloths, authentic antiques, and finest quality rice.  
+                    <LocalizedText en="Your trusted source for premium spices, traditional cloths, authentic antiques, and finest quality rice." ar="مصدرُكم الموثوق للتوابل الفاخرة، الملابس التقليدية، التحف الأصيلة، وأجود أنواع الأرز." />
                   </p>
                 </div>
                 
@@ -120,7 +121,7 @@ export default function Footer() {
          
               >
                 <div className="footer-link-list-title-wrap">
-                  <h2 className="footer-wrap-title">Explore</h2>
+                  <h2 className="footer-wrap-title"><LocalizedText en="Explore" ar="تصفح" /></h2>
                   <div className="footer-title-bar-line"></div>
                 </div>
                 <div className="footer-link-list-wrap">
@@ -130,7 +131,18 @@ export default function Footer() {
                       href={`/${page}`} 
                       className="footer-widget hover:underline hover:text-white transition-colors"
                     >
-                      {page.charAt(0).toUpperCase() + page.slice(1)}
+                      <LocalizedText 
+                        en={page.charAt(0).toUpperCase() + page.slice(1)} 
+                        ar={
+                          page === 'spices' ? 'التوابل' :
+                          page === 'cloths' ? 'الملابس' :
+                          page === 'antiques' ? 'التحف' :
+                          page === 'rice' ? 'الأرز' :
+                          page === 'about' ? 'من نحن' :
+                          page === 'contact' ? 'اتصل بنا' :
+                          page
+                        }
+                      />
                     </Link>
                   ))}
                 </div>
@@ -143,7 +155,7 @@ export default function Footer() {
               
               >
                 <div className="footer-link-list-title-wrap">
-                  <h2 className="footer-wrap-title">Contact Info</h2>
+                  <h2 className="footer-wrap-title"><LocalizedText en="Contact Info" ar="معلومات التواصل" /></h2>
                   <div className="footer-title-bar-line"></div>
                 </div>
                 <div className="footer-contact-info-details">
@@ -157,7 +169,7 @@ export default function Footer() {
                       />
                     </div>
                     <div className="footer-contact-text-wrap">
-                      <p className="footer-contact-text">Rajiv Gandhi Bypass<br />Manjeri, Kerala 676121</p>
+                      <p className="footer-contact-text"><LocalizedText en="Rajiv Gandhi Bypass\nManjeri, Kerala 676121" ar="طريق راجيف غاندي السريع\nمانجيري، كيرالا 676121" /></p>
                     </div>
                   </div>
                   <div className="footer-contact-line-break"></div>
@@ -210,13 +222,13 @@ export default function Footer() {
              
               >
                 <div className="footer-link-list-title-wrap">
-                  <h2 className="footer-wrap-title">Opening Hours</h2>
+                  <h2 className="footer-wrap-title"><LocalizedText en="Opening Hours" ar="ساعات العمل" /></h2>
                   <div className="footer-title-bar-line"></div>
                 </div>
                 <div className="footer-timing-wrap">
-                  <p className="footer-contact-text">Mon - Sat &nbsp; &nbsp; 09:00 - 19:00 hrs</p>
-                  <p className="footer-contact-text">Sunday &nbsp; &nbsp; &nbsp; 10:00 - 16:00 hrs</p>
-                  <p className="footer-contact-text">Online orders: 24/7</p>
+                  <p className="footer-contact-text"><LocalizedText en="Mon - Sat   09:00 - 19:00 hrs" ar="الاثنين - السبت   09:00 - 19:00" /></p>
+                  <p className="footer-contact-text"><LocalizedText en="Sunday     10:00 - 16:00 hrs" ar="الأحد     10:00 - 16:00" /></p>
+                  <p className="footer-contact-text"><LocalizedText en="Online orders: 24/7" ar="الطلبات عبر الإنترنت: 24/7" /></p>
                 </div>
               </motion.div>
             </motion.div>
@@ -232,21 +244,21 @@ export default function Footer() {
             
             >
               <p className="footer-copyright-content">
-                Copyright © <Link href="/home" className="copyright-link hover:underline">Kanzulhind</Link> | 
-                Your Premium Source for Spices, Cloths, Antiques & Rice
+                Copyright © <Link href="/home" className="copyright-link hover:underline"><LocalizedText en="Kanzulhind" ar="كنز الهند" /></Link> | 
+                <LocalizedText en="Your Premium Source for Spices, Cloths, Antiques & Rice" ar="مصدرُكم المميز للتوابل، الملابس، التحف والأرز" />
               </p>
               
               <div className="footer-utility-link-wrap">
                 {[
-                  { href: "/privacy-policy", text: "Privacy Policy" },
-                  { href: "/terms-conditions", text: "Terms & Conditions" },
-                  { href: "/shipping-info", text: "Shipping Info" },
-                  { href: "/return-policy", text: "Return Policy" },
-                  { href: "/faq", text: "FAQ" }
+                  { href: "/privacy-policy", text: "Privacy Policy", ar: "سياسة الخصوصية" },
+                  { href: "/terms-conditions", text: "Terms & Conditions", ar: "الشروط والأحكام" },
+                  { href: "/shipping-info", text: "Shipping Info", ar: "معلومات الشحن" },
+                  { href: "/return-policy", text: "Return Policy", ar: "سياسة الإرجاع" },
+                  { href: "/faq", text: "FAQ", ar: "الأسئلة الشائعة" }
                 ].map((link, index) => (
                   <React.Fragment key={index}>
                     <Link href={link.href} className="footer-utility-widget hover:underline">
-                      {link.text}
+                      <LocalizedText en={link.text} ar={link.ar} />
                     </Link>
                     {index < 4 && <div className="footer-widget-line-break"></div>}
                   </React.Fragment>

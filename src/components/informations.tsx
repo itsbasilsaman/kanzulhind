@@ -3,6 +3,9 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import LocalizedText from "@/components/LocalizedText";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
+import { GiTravelDress } from "react-icons/gi";
+import { FaBowlFood } from "react-icons/fa6";
 
 export default function Informations() {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -56,15 +59,7 @@ export default function Informations() {
       <div className="linear-section-bg">
         <div className="w-layout-blockcontainer container w-container">
           <div className="our-company-wrap">
-            <div 
-              ref={titleRef}
-              className="our-company-title-wrap"
-            >
-              <LocalizedText en="Authentic Indian Products for Your Lifestyle" ar="منتجات هندية أصلية لأسلوب حياتك" />
-              <div className="section-content-wrap">
-                <LocalizedText en="Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East." ar="منتجات التراث الهندي الفاخرة - التوابل، الأقمشة، الأرز، والتحف، تجلب الهند الأصيلة إلى الشرق الأوسط." />
-              </div>
-            </div>
+             
             <div className="our-company-card-whole-grid">
               {/* Card 1 */}
               <div 
@@ -74,19 +69,20 @@ export default function Informations() {
                 onMouseLeave={() => handleCardHover(0, false)}
               >
                 <div className="our-company-card-icon-bg">
-                  <Image
-                    src="/about-list-icon-tick.svg"
-                    width={50}
-                    height={50}
-                    loading="lazy"
-                    alt="Indian Antiques Icon"
-                    className="our-company-card-icon"
-                  />
+                <FaHandsHoldingCircle size={35} className='text-white' />
                 </div>
                 <div className="our-company-card-list-whole-wrap">
-                  <h3 className="our-company-card-title">Indian Antiques</h3>
+                  <h3 className="our-company-card-title">
+                    <LocalizedText en="Indian Antiques" ar="تحف هندية" />
+                  </h3>
                   <div className="our-company-card-list">
-                    {['Traditional Jewelry', 'Vintage Artifacts', 'Centuries of Culture', 'Heritage Pieces', 'Authentic Collection'].map((item, i) => (
+                    {[
+                      { en: 'Traditional Jewelry', ar: 'مجوهرات تقليدية' },
+                      { en: 'Vintage Artifacts', ar: 'قطع أثرية قديمة' },
+                      { en: 'Centuries of Culture', ar: 'قرون من الثقافة' },
+                      { en: 'Heritage Pieces', ar: 'قطع تراثية' },
+                      { en: 'Authentic Collection', ar: 'مجموعة أصلية' }
+                    ].map((item, i) => (
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
@@ -98,7 +94,9 @@ export default function Informations() {
                             className="about-list-icon"
                           />
                         </div>
-                        <p className="about-list-content">{item}</p>
+                        <p className="about-list-content">
+                          <LocalizedText en={item.en} ar={item.ar} />
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -113,19 +111,20 @@ export default function Informations() {
                 onMouseLeave={() => handleCardHover(1, false)}
               >
                 <div className="our-company-card-icon-bg">
-                  <Image
-                    src="/about-list-icon-tick.svg"
-                    width={50}
-                    height={50}
-                    loading="lazy"
-                    alt="Traditional Textiles Icon"
-                    className="our-company-card-icon"
-                  />
+                <GiTravelDress  size={35}  className='  text-white'/>
                 </div>
                 <div className="our-company-card-list-whole-wrap">
-                  <h3 className="our-company-card-title">Traditional Textiles</h3>
+                  <h3 className="our-company-card-title">
+                    <LocalizedText en="Traditional Textiles" ar="منسوجات تقليدية" />
+                  </h3>
                   <div className="our-company-card-list">
-                    {['Silk Sarees', 'Handcrafted Cotton', 'Rich Textile Heritage', 'Premium Fabrics', 'Traditional Garments'].map((item, i) => (
+                    {[
+                      { en: 'Silk Sarees', ar: 'ساري حرير' },
+                      { en: 'Handcrafted Cotton', ar: 'قطن يدوي الصنع' },
+                      { en: 'Rich Textile Heritage', ar: 'تراث غني في النسيج' },
+                      { en: 'Premium Fabrics', ar: 'أقمشة فاخرة' },
+                      { en: 'Traditional Garments', ar: 'ملابس تقليدية' }
+                    ].map((item, i) => (
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
@@ -137,7 +136,9 @@ export default function Informations() {
                             className="about-list-icon"
                           />
                         </div>
-                        <p className="about-list-content">{item}</p>
+                        <p className="about-list-content">
+                          <LocalizedText en={item.en} ar={item.ar} />
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -152,19 +153,20 @@ export default function Informations() {
                 onMouseLeave={() => handleCardHover(2, false)}
               >
                 <div className="our-company-card-icon-bg">
-                  <Image
-                    src="/about-list-icon-tick.svg"
-                    width={50}
-                    height={50}
-                    loading="lazy"
-                    alt="Pure Indian Spices & Rice Icon"
-                    className="our-company-card-icon"
-                  />
+                <FaBowlFood  size={35} className='  text-white' />
                 </div>
                 <div className="our-company-card-list-whole-wrap">
-                  <h3 className="our-company-card-title">Pure Indian Spices & Rice</h3>
+                  <h3 className="our-company-card-title">
+                    <LocalizedText en="Pure Indian Spices & Rice" ar="توابل وأرز هندي أصيل" />
+                  </h3>
                   <div className="our-company-card-list">
-                    {['Cardamom & Elaichi', 'Turmeric & Haldi', 'Saffron & Kesar', 'Basmati & Jasmine Rice', 'Direct Farm Sourcing'].map((item, i) => (
+                    {[
+                      { en: 'Cardamom & Elaichi', ar: 'هيل وإيلايتشي' },
+                      { en: 'Turmeric & Haldi', ar: 'كركم وهالدي' },
+                      { en: 'Saffron & Kesar', ar: 'زعفران وكيسار' },
+                      { en: 'Basmati & Jasmine Rice', ar: 'أرز بسمتي وياسمين' },
+                      { en: 'Direct Farm Sourcing', ar: 'توريد مباشر من المزارع' }
+                    ].map((item, i) => (
                       <div key={i} className="about-list-item">
                         <div className="about-list-icon-wrap">
                           <Image
@@ -176,7 +178,9 @@ export default function Informations() {
                             className="about-list-icon"
                           />
                         </div>
-                        <p className="about-list-content">{item}</p>
+                        <p className="about-list-content">
+                          <LocalizedText en={item.en} ar={item.ar} />
+                        </p>
                       </div>
                     ))}
                   </div>

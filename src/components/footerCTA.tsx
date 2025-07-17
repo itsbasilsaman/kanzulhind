@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 // import Image from 'next/image';
+import LocalizedText from "@/components/LocalizedText";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function FooterCTA() {
   const [email, setEmail] = useState('');
@@ -9,6 +11,7 @@ export default function FooterCTA() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const formRef = useRef<HTMLFormElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -65,11 +68,11 @@ export default function FooterCTA() {
         >
           <div className="footer-cta-content-wrap">
             <h2 className="footer-cta-title group">
-              Discover   Products
+              <LocalizedText en="Discover Products" ar="اكتشف المنتجات" />
               <span className="block h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </h2>
             <p className="footer-cta-content">
-              Inquire instantly about Antiques, Clothing, Spices, or Rice.
+              <LocalizedText en="Inquire instantly about Antiques, Clothing, Spices, or Rice." ar="استفسر فوراً عن التحف أو الملابس أو التوابل أو الأرز." />
             </p>
           </div>
           
@@ -92,8 +95,8 @@ export default function FooterCTA() {
                     maxLength={256}
                     name="Footer-Email-Two-2"
                     data-name="Footer Email Two 2"
-                    aria-label="Enter your email"
-                    placeholder="Email Address"
+                    aria-label={lang === 'EN' ? 'Enter your email' : 'أدخل بريدك الإلكتروني'}
+                    placeholder={lang === 'EN' ? 'Email Address' : 'البريد الإلكتروني'}
                     type="email"
                     id="Footer-Email-Two-2"
                     value={email}
@@ -107,20 +110,24 @@ export default function FooterCTA() {
                       isSubmitting ? 'opacity-80 cursor-not-allowed' : ''
                     }`}
                   >
-                    {isSubmitting ? 'Please wait...' : 'Send'}
+                    {isSubmitting ? (
+                      <LocalizedText en="Please wait..." ar="يرجى الانتظار..." />
+                    ) : (
+                      <LocalizedText en="Send" ar="إرسال" />
+                    )}
                   </button>
                 </div>
               </form>
               
               {submitStatus === 'success' && (
                 <div className="w-form-done animate-fadeIn">
-                  <div>Thank you! Your submission has been received!</div>
+                  <div><LocalizedText en="Thank you! Your submission has been received!" ar="شكراً لك! تم استلام طلبك بنجاح!" /></div>
                 </div>
               )}
               
               {submitStatus === 'error' && (
                 <div className="w-form-fail animate-fadeIn">
-                  <div>Oops! Something went wrong while submitting the form.</div>
+                  <div><LocalizedText en="Oops! Something went wrong while submitting the form." ar="عذراً! حدث خطأ أثناء إرسال النموذج." /></div>
                 </div>
               )}
             </div>

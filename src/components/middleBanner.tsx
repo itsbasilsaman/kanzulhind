@@ -68,7 +68,7 @@ export default function MiddleBanner() {
                 lineHeight: 1.3,
               }}
             >
-              <LocalizedText en="Discover unique Antiques, Clothing, Spices, and Rice at Kanzulhind." ar="اكتشف التحف الفريدة والملابس والتوابل والأرز في كنز الهند." />
+              <LocalizedText en="Elevate your collection with rare Antiques,  premium Spices & Rice from Kanzulhind." ar="اكتشف التحف الفريدة والملابس والتوابل والأرز في كنز الهند." />
             </span>
 
             {/* Subtext */}
@@ -85,7 +85,7 @@ export default function MiddleBanner() {
                 marginBottom: "16px",
               }}
             >
-              <LocalizedText en="Each product features images, details, and origin for easy selection." ar="كل منتج يحتوي على صور وتفاصيل ومنشأ لسهولة الاختيار." />
+              <LocalizedText en="Browse with confidence. see every detail, origin, and highlight before you choose." ar="تصفح بثقة—شاهد كل التفاصيل والمنشأ والمميزات قبل اختيارك." />
             </p>
 
             {/* Buttons */}
@@ -105,13 +105,19 @@ export default function MiddleBanner() {
                   minWidth: "160px",
                   color: "#333333",
                 }}
+                onClick={() => {
+                  window.open(
+                    'https://wa.me/966571961404?text=' + encodeURIComponent('Hello, I would like to enquire about your products.'),
+                    '_blank'
+                  );
+                }}
               >
                 <LocalizedText en="Inquire instantly" ar="استفسر فوراً" />
               </button>
 
               {/* Browse all products Button */}
-              <span
-                className="  text-white border border-white hover:bg-white hover:text-gray-800 hover:scale-105 transition-all duration-200 font-medium rounded-full backdrop-blur-sm w-full sm:w-auto"
+              <button
+                className="!text-white border border-white   hover:text-gray-800 hover:scale-105 transition-all duration-200 font-medium rounded-full backdrop-blur-sm w-full sm:w-auto"
                 style={{
                   fontWeight: 500,
                   fontSize: "clamp(14px, 2vw, 16px)",
@@ -119,10 +125,14 @@ export default function MiddleBanner() {
                   borderRadius: "9999px",
                   borderWidth: "1px",
                   minWidth: "180px",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  window.location.href = '/products';
                 }}
               >
                 <LocalizedText en="Fast, personal, and convenient process" ar="عملية سريعة وشخصية ومريحة" />
-              </span>
+              </button>
             </div>
           </div>
         </div>

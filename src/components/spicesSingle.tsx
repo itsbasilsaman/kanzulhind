@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import LocalizedText from "@/components/LocalizedText";
 
 export default function SpicesSingle() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -31,25 +32,43 @@ export default function SpicesSingle() {
   };
 
   const services = [
-    { name: "Cardamom", href: "cardamom.html" },
-    { name: "Turmeric", href: "turmeric.html" },
-    { name: "Saffron", href: "saffron.html" },
-    { name: "Cinnamon", href: "cinnamon.html" },
-    { name: "Black Pepper", href: "black-pepper.html" },
+    { name: { en: "Cardamom", ar: "هيل" }, href: "cardamom.html" },
+    { name: { en: "Turmeric", ar: "كركم" }, href: "turmeric.html" },
+    { name: { en: "Saffron", ar: "زعفران" }, href: "saffron.html" },
+    { name: { en: "Cinnamon", ar: "قرفة" }, href: "cinnamon.html" },
+    { name: { en: "Black Pepper", ar: "فلفل أسود" }, href: "black-pepper.html" },
   ];
 
   const faqs = [
     {
-      question: "How do you ensure the authenticity of your Indian spices?",
-      answer: "We source our spices directly from certified farms across India, ensuring each batch is tested for purity, potency, and authenticity. Our quality control process includes rigorous testing for contaminants and verification of origin."
+      question: {
+        en: "How do you ensure the authenticity of your Indian spices?",
+        ar: "كيف تضمنون أصالة التوابل الهندية لديكم؟"
+      },
+      answer: {
+        en: "We source our spices directly from certified farms across India, ensuring each batch is tested for purity, potency, and authenticity. Our quality control process includes rigorous testing for contaminants and verification of origin.",
+        ar: "نحصل على توابلنا مباشرة من مزارع معتمدة في جميع أنحاء الهند، مع اختبار كل دفعة لضمان النقاء والقوة والأصالة. تشمل عملية مراقبة الجودة لدينا اختبارات دقيقة للملوثات والتحقق من المصدر."
+      }
     },
     {
-      question: "What makes your spices different from regular store-bought ones?",
-      answer: "Our spices are sourced directly from farms, eliminating middlemen and ensuring fresher, more potent flavors. They are carefully harvested, processed, and packaged to preserve their natural aroma and medicinal properties."
+      question: {
+        en: "What makes your spices different from regular store-bought ones?",
+        ar: "ما الذي يميز توابلكم عن التوابل المتوفرة في المتاجر العادية؟"
+      },
+      answer: {
+        en: "Our spices are sourced directly from farms, eliminating middlemen and ensuring fresher, more potent flavors. They are carefully harvested, processed, and packaged to preserve their natural aroma and medicinal properties.",
+        ar: "توابلنا تأتي مباشرة من المزارع دون وسطاء، ما يضمن نكهة أقوى وأعذب. يتم حصادها ومعالجتها وتعبئتها بعناية للحفاظ على رائحتها الطبيعية وخصائصها العلاجية."
+      }
     },
     {
-      question: "Do you offer organic spice options?",
-      answer: "Yes, we offer a wide selection of organic Indian spices that are grown without synthetic pesticides or fertilizers, ensuring the purest and most natural flavors for your culinary creations."
+      question: {
+        en: "Do you offer organic spice options?",
+        ar: "هل تقدمون خيارات توابل عضوية؟"
+      },
+      answer: {
+        en: "Yes, we offer a wide selection of organic Indian spices that are grown without synthetic pesticides or fertilizers, ensuring the purest and most natural flavors for your culinary creations.",
+        ar: "نعم، نقدم مجموعة واسعة من التوابل الهندية العضوية المزروعة دون مبيدات أو أسمدة صناعية، لضمان أنقى وألذ النكهات لأطباقكم."
+      }
     }
   ];
 
@@ -63,7 +82,9 @@ export default function SpicesSingle() {
           >
             <div className="service-list-card-wrap hover:scale-[1.02] transition-transform duration-300">
               <div className="service-list-card-title-wrap">
-                <h2 className="service-list-card-title">Spice Categories</h2>
+                <h2 className="service-list-card-title">
+                  <LocalizedText en="Spice Categories" ar="فئات التوابل" />
+                </h2>
               </div>
               <div className="service-list">
                 <div className="w-dyn-list">
@@ -75,7 +96,7 @@ export default function SpicesSingle() {
                         className="w-dyn-item hover:translate-x-2 transition-transform duration-200"
                       >
                         <a href={service.href} className="service-list-link">
-                          {service.name}
+                          <LocalizedText en={service.name.en} ar={service.name.ar} />
                         </a>
                       </div>
                     ))}
@@ -84,7 +105,9 @@ export default function SpicesSingle() {
               </div>
             </div>
             <div className="  service-cta-card spices  group hover:shadow-lg transition-all duration-300">
-              <h2 className="service-cta-title">Looking for specific spices? Contact us!</h2>
+              <h2 className="service-cta-title">
+                <LocalizedText en="Looking for specific spices? Contact us!" ar="تبحث عن توابل معينة؟ تواصل معنا!" />
+              </h2>
               <div className="service-cta-link-wrap">
                 <div className="service-cta-icon-bg">
                   {/* <Image
@@ -107,19 +130,19 @@ export default function SpicesSingle() {
             className="service-summary-whole-wrap animate-fadeIn transition-opacity duration-500 delay-200"
           >
             <div className="service-summary w-richtext">
-              <h4>Pure Indian Spices</h4>
-              <p>Authentic Indian spices sourced directly from farms - cardamom, turmeric, saffron and more, delivering authentic flavors to your kitchen.</p>
-              <p>With generations of expertise in spice cultivation and processing, our carefully selected spices bring the true essence of Indian cuisine to your home, ensuring every dish is infused with authentic flavors and aromas.</p>
-              <h4>Why Choose Our Spices?</h4>
-              <p>Our spices represent the finest quality available, sourced directly from the most renowned spice-growing regions across India.</p>
+              <h4><LocalizedText en="Pure Indian Spices" ar="توابل هندية نقية" /></h4>
+              <p><LocalizedText en="Authentic Indian spices sourced directly from farms - cardamom, turmeric, saffron and more, delivering authentic flavors to your kitchen." ar="توابل هندية أصلية تُجلب مباشرة من المزارع - هيل، كركم، زعفران وأكثر، لتمنح مطبخك نكهات أصيلة." /></p>
+              <p><LocalizedText en="With generations of expertise in spice cultivation and processing, our carefully selected spices bring the true essence of Indian cuisine to your home, ensuring every dish is infused with authentic flavors and aromas." ar="بخبرة أجيال في زراعة ومعالجة التوابل، نقدم لكم توابل مختارة بعناية تجلب جوهر المطبخ الهندي الأصيل إلى منزلكم، لتضفي على كل طبق نكهات وروائح فريدة." /></p>
+              <h4><LocalizedText en="Why Choose Our Spices?" ar="لماذا تختار توابلنا؟" /></h4>
+              <p><LocalizedText en="Our spices represent the finest quality available, sourced directly from the most renowned spice-growing regions across India." ar="توابلنا تمثل أعلى درجات الجودة، حيث يتم الحصول عليها مباشرة من أشهر مناطق زراعة التوابل في الهند." /></p>
               <ul role="list">
-                <li className="hover:text-green-600 transition-colors">Direct Farm-to-Table Sourcing</li>
-                <li className="hover:text-green-600 transition-colors">Premium Quality Selection</li>
-                <li className="hover:text-green-600 transition-colors">Authentic Indian Flavors</li>
-                <li className="hover:text-green-600 transition-colors">Fresh & Potent Aromas</li>
+                <li className="hover:text-green-600 transition-colors"><LocalizedText en="Direct Farm-to-Table Sourcing" ar="من المزرعة إلى المائدة مباشرة" /></li>
+                <li className="hover:text-green-600 transition-colors"><LocalizedText en="Premium Quality Selection" ar="اختيار عالي الجودة" /></li>
+                <li className="hover:text-green-600 transition-colors"><LocalizedText en="Authentic Indian Flavors" ar="نكهات هندية أصيلة" /></li>
+                <li className="hover:text-green-600 transition-colors"><LocalizedText en="Fresh & Potent Aromas" ar="روائح طازجة وقوية" /></li>
               </ul>
-              <h4>Our Spice Collection</h4>
-              <p>From the aromatic cardamom pods to the golden turmeric, from precious saffron threads to robust black pepper, we offer a comprehensive range of authentic Indian spices that will transform your culinary experience.</p>
+              <h4><LocalizedText en="Our Spice Collection" ar="مجموعة التوابل لدينا" /></h4>
+              <p><LocalizedText en="From the aromatic cardamom pods to the golden turmeric, from precious saffron threads to robust black pepper, we offer a comprehensive range of authentic Indian spices that will transform your culinary experience." ar="من حبات الهيل العطرية إلى الكركم الذهبي، ومن خيوط الزعفران الثمينة إلى الفلفل الأسود القوي، نقدم مجموعة شاملة من التوابل الهندية الأصيلة التي ستغير تجربتك في الطهي." /></p>
               <figure style={{ maxWidth: '752px' }} className="w-richtext-align-fullwidth w-richtext-figure-type-image">
                 <div>
                   <Image
@@ -131,13 +154,15 @@ export default function SpicesSingle() {
                   />
                 </div>
               </figure>
-              <p>We are committed to preserving the traditional methods of spice cultivation and processing, ensuring that every spice in our collection carries the authentic taste and aroma that has made Indian cuisine world-famous.</p>
-              <h4>Contact Us</h4>
-              <p>Whether you&apos;re a professional chef or a home cook passionate about authentic flavors, our team is here to help you discover the perfect spices that will elevate your dishes to new heights of culinary excellence.</p>
+              <p><LocalizedText en="We are committed to preserving the traditional methods of spice cultivation and processing, ensuring that every spice in our collection carries the authentic taste and aroma that has made Indian cuisine world-famous." ar="نحن ملتزمون بالحفاظ على الطرق التقليدية في زراعة ومعالجة التوابل، لضمان أن كل نوع في مجموعتنا يحمل الطعم والرائحة الأصيلة التي جعلت المطبخ الهندي مشهورًا عالميًا." /></p>
+              <h4><LocalizedText en="Contact Us" ar="تواصل معنا" /></h4>
+              <p><LocalizedText en="Whether you're a professional chef or a home cook passionate about authentic flavors, our team is here to help you discover the perfect spices that will elevate your dishes to new heights of culinary excellence." ar="سواء كنت طاهياً محترفاً أو هاوياً يعشق النكهات الأصيلة، فإن فريقنا هنا لمساعدتك في اكتشاف التوابل المثالية التي سترتقي بأطباقك إلى أعلى مستويات التميز." /></p>
             </div>
             <div className="faq-service-wrap">
               <div className="faq-title-wrap service-post">
-                <h2 className="section-title font-medium">Frequently Asked Questions</h2>
+                <h2 className="section-title font-medium">
+                  <LocalizedText en="Frequently Asked Questions" ar="الأسئلة الشائعة" />
+                </h2>
               </div>
               <div className="faq-whole-wrap service-post">
                 {faqs.map((faq, index) => (
@@ -149,7 +174,7 @@ export default function SpicesSingle() {
                       className="faq-toggle service-post cursor-pointer hover:bg-gray-50 transition-colors duration-200"
                       onClick={() => toggleFaq(index)}
                     >
-                      <div>{faq.question}</div>
+                      <div><LocalizedText en={faq.question.en} ar={faq.question.ar} /></div>
                       <div className="faq-icon-wrap">
                         <Image
                           src="https://cdn-icons-png.flaticon.com/512/32/32195.png"
@@ -172,7 +197,7 @@ export default function SpicesSingle() {
                     >
                       <div className="faq-answer-list-wrap service">
                         <p className="faq-answer-content">
-                          {faq.answer}
+                          <LocalizedText en={faq.answer.en} ar={faq.answer.ar} />
                         </p>
                       </div>
                     </div>
