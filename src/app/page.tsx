@@ -1,7 +1,6 @@
 
 import ServiceSection from "../components/serviceSection";
 import FooterCTA from "../components/footerCTA";
-import dynamic from "next/dynamic";
 // import ProductSection from "./components/product";
 import Informations from "../components/informations";
 import StatsComponent from "@/components/statsSection";
