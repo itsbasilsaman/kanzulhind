@@ -31,7 +31,7 @@ export default function MainBanner() {
       <div className="lg:hidden">
         {/* Video Section - Mobile */}
         <div className="relative w-full h-[50vh] bg-gray-100">
-          <video className="w-full h-full object-contain" autoPlay muted loop playsInline poster="/banner-img.jpg">
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
             <source src="https://brandbikofficial.s3.eu-north-1.amazonaws.com/brandbik_website/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -92,7 +92,7 @@ export default function MainBanner() {
 
         {/* Video Section - Desktop */}
         <div className="w-1/2 relative bg-gray-100">
-          <video className="w-full h-full object-cover" autoPlay muted loop playsInline poster="/banner-img.jpg">
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
             <source src="https://brandbikofficial.s3.eu-north-1.amazonaws.com/brandbik_website/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
