@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       'purepng.com',
       'c8.alamy.com',
       'followtheyellowbrickhome.com',
-      'lionandunicorn.com',
+      'lionandunicorn.com', // only once
       'www.modeintextile.fr',
       'wallpaperbat.com',
       'www.thedailymeal.com',
@@ -41,4 +41,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer(nextConfig);

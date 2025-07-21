@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { LanguageProvider, useLanguage } from "@/components/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
  
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -54,7 +55,12 @@ function LayoutWithDir({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  }, []);
   return (
     <LanguageProvider>
       <LayoutWithDir>{children}</LayoutWithDir>

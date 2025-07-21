@@ -117,8 +117,10 @@ const ServiceSection = () => {
           </div>
         </div>
         <div className="service-section-image-wrap">
-          <img
+          <Image
             src="/service-section-leaf.png"
+            width={350}
+            height={170}
             loading="lazy"
             alt="service section leaf image"
             className="service-section-image"
