@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { LanguageProvider, useLanguage } from "@/components/LanguageContext";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+ 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,13 +28,26 @@ const almarai = Almarai({
 
 function LayoutWithDir({ children }: { children: React.ReactNode }) {
   const { lang } = useLanguage();
+
+  const pathname = usePathname()
+
   return (
     <html lang={lang === "AR" ? "ar" : "en"} dir={lang === "AR" ? "rtl" : "ltr"}>
       <body
         className={`${plusJakartaSans.variable} ${montserrat.variable} ${almarai.variable} antialiased`}
       >
         <Navbar />
-        {children}
+         <AnimatePresence mode="wait">
+          <motion.main
+           key={pathname}
+           initial={{opacity: 0}}
+           animate={{opacity: 1}}
+          
+           transition={{duration: 0.5}}
+          >
+             {children}
+          </motion.main>
+         </AnimatePresence>
         <Footer />
       </body>
     </html>

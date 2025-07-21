@@ -2,8 +2,10 @@
 import { Button } from "@/components/ui/button"
 import LocalizedText from "@/components/LocalizedText";
 import React, { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-export default function HandwashInterface() {
+
+export default function MainBanner() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,14 +31,19 @@ export default function HandwashInterface() {
       <div className="lg:hidden">
         {/* Video Section - Mobile */}
         <div className="relative w-full h-[50vh] bg-gray-100">
-          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-            <source src="/video.mp4" type="video/mp4" />
+          <video className="w-full h-full object-contain" autoPlay muted loop playsInline poster="/banner-img.jpg">
+            <source src="https://brandbikofficial.s3.eu-north-1.amazonaws.com/brandbik_website/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
         {/* Content Section - Mobile */}
-        <div
+      <motion.div
+       initial={{opacity: 0, y: 40}}
+       animate={{opacity: 1, y: 0}}
+       transition={{ duration: 0.8, ease: 'easeOut'}}
+      >
+          <div
           className={`linear-section-bg p-6 min-h-[37vh] flex flex-col justify-center transition-all duration-700 ease-out transform
             ${isVisible ? 'opacity-100 translate-y-0 translate-x-0' : 'opacity-0 translate-y-12 -translate-x-8'}
           `}
@@ -56,6 +63,7 @@ export default function HandwashInterface() {
             </a>
           </Button>
         </div>
+      </motion.div>
       </div>
 
       {/* Desktop Layout */}
@@ -84,8 +92,8 @@ export default function HandwashInterface() {
 
         {/* Video Section - Desktop */}
         <div className="w-1/2 relative bg-gray-100">
-          <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-            <source src="/video.mp4" type="video/mp4" />
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline poster="/banner-img.jpg">
+            <source src="https://brandbikofficial.s3.eu-north-1.amazonaws.com/brandbik_website/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

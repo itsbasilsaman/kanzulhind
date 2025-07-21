@@ -1,24 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import LocalizedText from "@/components/LocalizedText";
 
 const ServiceSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-
-
   const services = [
     {
       title: { en: "Indian Antiques", ar: "تحف هندية" },
@@ -81,36 +67,24 @@ const ServiceSection = () => {
       <div className="service-bg-wrap pt-7">
         <div className="w-layout-blockcontainer container w-container">
           <div className="service-wrap">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={containerVariants}
-              className="service-title-wrap"
-            >
-              <motion.h2   className="section-title">
+            <div className="service-title-wrap">
+              <h2 className="section-title">
                 <LocalizedText en="Authentic Indian Products for Your Lifestyle" ar="تحف هندية للحياة الخاصة بك" />
-              </motion.h2>
-              <motion.p   className="section-content">
+              </h2>
+              <p className="section-content">
                 <LocalizedText en="Premium Indian heritage products - spices, textiles, rice, and antiques, bringing authentic India to the Middle East." ar="منتجات هندية فاخرة للتراث - التوابل، الأقمشة، الأرز، والتحف، إحاطة أصلية إلى الشرق الأوسط." />
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
 
             <div className="service-collection-whole-wrap">
               <div className="w-dyn-list">
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                  variants={containerVariants}
+                <div
                   role="list"
                   className="service-collection-list w-dyn-items w-row"
                 >
                   {services.map((service, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                       
-                      whileHover="hover"
                       role="listitem"
                       className={`service-item w-dyn-item w-col w-col-4 ${index >= 4 ? 'hidden md:block' : ''}`}
                     >
@@ -135,19 +109,15 @@ const ServiceSection = () => {
                           </p>
                         </div>
                       </Link>
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="service-section-image-wrap">
-          <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, type: "spring" }}
-            viewport={{ once: true }}
+          <img
             src="/service-section-leaf.png"
             loading="lazy"
             alt="service section leaf image"
